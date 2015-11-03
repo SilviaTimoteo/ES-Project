@@ -14,6 +14,6 @@
 <org.eventb.core.psStatus name="upgradePremium/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="66" org.eventb.core.psManual="false"/>
 <org.eventb.core.psStatus name="upgradePremium/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="66" org.eventb.core.psManual="false"/>
 <org.eventb.core.psStatus name="downgradeBasic/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="66" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="downgradeBasic/grd4/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="66" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="downgradeBasic/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="66" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="downgradeBasic/grd4/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="67" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="downgradeBasic/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="67" org.eventb.core.psManual="false"/>
 </org.eventb.core.psFile>
