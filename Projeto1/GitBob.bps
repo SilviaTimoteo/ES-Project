@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.psFile>
-<org.eventb.core.psStatus name="INITIALISATION/invRegUserUType/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="25" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="INITIALISATION/invRegUserEMails/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="25" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/invRegUserUType/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="38" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/invRegUserEMails/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="38" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="newUser/invRegUserUType/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="38" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="newUser/invRegUserEMails/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="38" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="removeUser/invRegUserUType/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="42" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="removeUser/invRegUserEMails/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="42" org.eventb.core.psManual="false"/>
 </org.eventb.core.psFile>

@@ -7,8 +7,8 @@
 <org.eventb.core.seesContext name="(" org.eventb.core.target="Users"/>
 <org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name=")" org.eventb.core.identifier="registeredUserEMails"/>
 <org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="*" org.eventb.core.identifier="registeredUserUTypes"/>
-<org.eventb.core.invariant name="+" org.eventb.core.label="invRegUserUType" org.eventb.core.predicate="registeredUserUTypes ∈ ℙ(USERS → UTYPES)"/>
-<org.eventb.core.invariant name="," org.eventb.core.label="invRegUserEMails" org.eventb.core.predicate="registeredUserEMails ∈ ℙ(USERS ↣ UEMAILS)"/>
+<org.eventb.core.invariant name="+" org.eventb.core.label="invRegUserUType" org.eventb.core.predicate="registeredUserUTypes ∈ USERS → UTYPES"/>
+<org.eventb.core.invariant name="," org.eventb.core.label="invRegUserEMails" org.eventb.core.predicate="registeredUserEMails ∈ USERS ↣ UEMAILS"/>
 <org.eventb.core.event name="-" org.eventb.core.comment="Creates a new user with identiﬁer usr, with the given proﬁle type, and with the given e-mail " org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="newUser">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="user"/>
 <org.eventb.core.parameter name="(" org.eventb.core.identifier="type"/>
@@ -18,5 +18,14 @@
 <org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="mail ∈ UEMAILS"/>
 <org.eventb.core.guard name="." org.eventb.core.comment="Isto é correspondente a restriçao 5 " org.eventb.core.label="rest5" org.eventb.core.predicate="user ∉ dom(registeredUserEMails) ∧ user ∉ dom(registeredUserUTypes)"/>
 <org.eventb.core.guard name="/" org.eventb.core.label="rest4" org.eventb.core.predicate="mail ∉ ran(registeredUserEMails)"/>
+<org.eventb.core.action name="0" org.eventb.core.assignment="registeredUserEMails≔registeredUserEMails ∪ {user ↦ mail}" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="1" org.eventb.core.assignment="registeredUserUTypes≔registeredUserUTypes ∪ {user ↦ type}" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="." org.eventb.core.comment="falta fazer a guarda sobre nao puder remover donos de ficheiros e malta envolvida em partilhas; Falta remover o acesso as versoes dos seus ficheiros" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="removeUser">
+<org.eventb.core.action name="'" org.eventb.core.assignment="registeredUserEMails ≔ {user} ⩤ registeredUserEMails" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="registeredUserUTypes ≔ {user} ⩤ registeredUserUTypes " org.eventb.core.label="act2"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="user"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="user ∈ USERS"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∈ dom(registeredUserEMails) ∧ user ∈ dom(registeredUserUTypes)"/>
 </org.eventb.core.event>
 </org.eventb.core.machineFile>
