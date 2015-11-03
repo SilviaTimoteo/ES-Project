@@ -11,10 +11,10 @@
 <org.eventb.core.action name="." org.eventb.core.assignment="fileBackupOn ≔ ∅" org.eventb.core.label="act8"/>
 </org.eventb.core.event>
 <org.eventb.core.seesContext name="(" org.eventb.core.target="Users"/>
-<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name=")" org.eventb.core.comment="usado para guardar os users registados e os seus Emails respectivos" org.eventb.core.identifier="registeredUserEMails"/>
-<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="*" org.eventb.core.comment="usado para guardar os users registados e os seus tipos respectivos" org.eventb.core.identifier="registeredUserUTypes"/>
-<org.eventb.core.invariant name="+" org.eventb.core.label="inv4" org.eventb.core.predicate="registeredUserUTypes ∈ USERS → UTYPES"/>
-<org.eventb.core.invariant name="," org.eventb.core.label="inv5" org.eventb.core.predicate="registeredUserEMails ∈ USERS ↣ UEMAILS"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="unknown -&gt; unknown" de.prob.units.unitPragmaAttribute="" name=")" org.eventb.core.comment="usado para guardar os users registados e os seus Emails respectivos" org.eventb.core.identifier="registeredUserEMails"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="unknown -&gt; unknown" de.prob.units.unitPragmaAttribute="" name="*" org.eventb.core.comment="usado para guardar os users registados e os seus tipos respectivos" org.eventb.core.identifier="registeredUserUTypes"/>
+<org.eventb.core.invariant name="+" org.eventb.core.label="inv4" org.eventb.core.predicate="registeredUserUTypes ∈ USERS ⇸ UTYPES"/>
+<org.eventb.core.invariant name="," org.eventb.core.label="inv5" org.eventb.core.predicate="registeredUserEMails ∈ USERS ⤔ UEMAILS"/>
 <org.eventb.core.event name="-" org.eventb.core.comment="Creates a new user with identiﬁer usr, with the given proﬁle type, and with the given e-mail " org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="newUser">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="user"/>
 <org.eventb.core.parameter name="(" org.eventb.core.identifier="type"/>
@@ -49,20 +49,20 @@
 <org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∈ dom(registeredUserEMails) ∧ user ∈ dom(registeredUserUTypes)"/>
 <org.eventb.core.guard name="*" org.eventb.core.label="grd3" org.eventb.core.predicate="registeredUserUTypes(user) = PREMIUM"/>
 <org.eventb.core.action name="+" org.eventb.core.assignment="registeredUserUTypes(user) ≔ BASIC" org.eventb.core.label="act1"/>
-<org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="∀f·(f ∈ fileSharing∼[{user}] ∧ fileMode(f) ≠ SECURE)"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="∀f∈FILES·(f ∈ fileSharing∼[{user}] ∧ fileMode(f) ≠ SECURE)"/>
 <org.eventb.core.guard name="-" org.eventb.core.label="grd5" org.eventb.core.predicate="∀f·(f ∈ fileSharing∼[{user}] ∧ (fileBackupOn(f) = FALSE ∨ ∃u·(u∈USERS ∧ registeredUserUTypes(u) = PREMIUM )))"/>
 </org.eventb.core.event>
-<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="1" org.eventb.core.comment="usado para guardar os ficheiros e seu tamanho respectivo" org.eventb.core.identifier="fileSize"/>
-<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="2" org.eventb.core.comment="usado para guardar os ficheiros e seu Owner respectivo" org.eventb.core.identifier="fileOwner"/>
-<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="3" org.eventb.core.comment="usado para guardar os ficheiros e sua versão respectivo" org.eventb.core.identifier="fileVersion"/>
-<org.eventb.core.invariant name="4" org.eventb.core.label="inv1" org.eventb.core.predicate="fileSize ∈ FILES → ℕ"/>
-<org.eventb.core.invariant name="5" org.eventb.core.label="inv2" org.eventb.core.predicate="fileOwner ∈ FILES → USERS"/>
-<org.eventb.core.invariant name="6" org.eventb.core.label="inv3" org.eventb.core.predicate="fileVersion ∈ FILES → ℕ1"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="unknown -&gt; unknown" de.prob.units.unitPragmaAttribute="" name="1" org.eventb.core.comment="usado para guardar os ficheiros e seu tamanho respectivo" org.eventb.core.identifier="fileSize"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="unknown -&gt; unknown" de.prob.units.unitPragmaAttribute="" name="2" org.eventb.core.comment="usado para guardar os ficheiros e seu Owner respectivo" org.eventb.core.identifier="fileOwner"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="unknown -&gt; unknown" de.prob.units.unitPragmaAttribute="" name="3" org.eventb.core.comment="usado para guardar os ficheiros e sua versão respectivo" org.eventb.core.identifier="fileVersion"/>
+<org.eventb.core.invariant name="4" org.eventb.core.label="inv1" org.eventb.core.predicate="fileSize ∈ FILES ⇸ ℕ"/>
+<org.eventb.core.invariant name="5" org.eventb.core.label="inv2" org.eventb.core.predicate="fileOwner ∈ FILES ⇸ USERS"/>
+<org.eventb.core.invariant name="6" org.eventb.core.label="inv3" org.eventb.core.predicate="fileVersion ∈ FILES ⇸ ℕ1"/>
 <org.eventb.core.seesContext name="7" org.eventb.core.target="Files"/>
-<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="8" org.eventb.core.comment="usado para guardar os users com que o file ta partilhado" org.eventb.core.identifier="fileSharing"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="unknown -&gt; unknown" de.prob.units.unitPragmaAttribute="" name="8" org.eventb.core.comment="usado para guardar os users com que o file ta partilhado" org.eventb.core.identifier="fileSharing"/>
 <org.eventb.core.invariant name="9" org.eventb.core.label="inv6" org.eventb.core.predicate="fileSharing ∈ FILES ↔ USERS"/>
-<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name=":" org.eventb.core.comment="usado para guardar o modo do ficheiro" org.eventb.core.identifier="fileMode"/>
-<org.eventb.core.invariant name=";" org.eventb.core.label="inv7" org.eventb.core.predicate="fileMode ∈ FILES → MODES"/>
-<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="=" org.eventb.core.identifier="fileBackupOn"/>
-<org.eventb.core.invariant name="&gt;" org.eventb.core.label="inv8" org.eventb.core.predicate="fileBackupOn ∈ FILES → BOOL"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="unknown -&gt; unknown" de.prob.units.unitPragmaAttribute="" name=":" org.eventb.core.comment="usado para guardar o modo do ficheiro" org.eventb.core.identifier="fileMode"/>
+<org.eventb.core.invariant name=";" org.eventb.core.label="inv7" org.eventb.core.predicate="fileMode ∈ FILES ⇸ MODES"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="unknown -&gt; boolean" de.prob.units.unitPragmaAttribute="" name="=" org.eventb.core.identifier="fileBackupOn"/>
+<org.eventb.core.invariant name="&gt;" org.eventb.core.label="inv8" org.eventb.core.predicate="fileBackupOn ∈ FILES ⇸ BOOL"/>
 </org.eventb.core.machineFile>
