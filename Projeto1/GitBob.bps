@@ -6,4 +6,8 @@
 <org.eventb.core.psStatus name="newUser/invRegUserEMails/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="38" org.eventb.core.psManual="false"/>
 <org.eventb.core.psStatus name="removeUser/invRegUserUType/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="42" org.eventb.core.psManual="false"/>
 <org.eventb.core.psStatus name="removeUser/invRegUserEMails/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="42" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="upgradePremium/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="46" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="upgradePremium/invRegUserUType/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="46" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="downgradeBasic/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="47" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="downgradeBasic/invRegUserUType/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="47" org.eventb.core.psManual="false"/>
 </org.eventb.core.psFile>
