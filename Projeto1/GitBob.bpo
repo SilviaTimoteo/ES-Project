@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="10">
-<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="5">
+<org.eventb.core.poFile org.eventb.core.poStamp="25">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="18">
 <org.eventb.core.poIdentifier name="UEMAILS" org.eventb.core.type="ℙ(UEMAILS)"/>
 <org.eventb.core.poIdentifier name="USERS" org.eventb.core.type="ℙ(USERS)"/>
 <org.eventb.core.poIdentifier name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
@@ -8,33 +8,43 @@
 <org.eventb.core.poIdentifier name="PREMIUM" org.eventb.core.type="UTYPES"/>
 <org.eventb.core.poPredicate name="UEMAILT" org.eventb.core.predicate="partition(UTYPES,{BASIC},{PREMIUM})" org.eventb.core.source="/Projeto1/Users.buc|org.eventb.core.contextFile#Users|org.eventb.core.axiom#."/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Projeto1/GitBob.bpo|org.eventb.core.poFile#GitBob|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="6">
-<org.eventb.core.poIdentifier name="registeredUserEMails" org.eventb.core.type="ℙ(ℙ(USERS×UTYPES))"/>
-<org.eventb.core.poIdentifier name="registeredUserUTypes" org.eventb.core.type="ℙ(ℙ(USERS×UEMAILS))"/>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Projeto1/GitBob.bpo|org.eventb.core.poFile#GitBob|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="25">
+<org.eventb.core.poIdentifier name="registeredUserEMails" org.eventb.core.type="ℙ(ℙ(USERS×UEMAILS))"/>
+<org.eventb.core.poIdentifier name="registeredUserUTypes" org.eventb.core.type="ℙ(ℙ(USERS×UTYPES))"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="INITIALISATION/invariantRegUserEmail/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="10">
+<org.eventb.core.poSequent name="INITIALISATION/invRegUserUType/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="25">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Projeto1/GitBob.bpo|org.eventb.core.poFile#GitBob|org.eventb.core.poPredicateSet#EVTALLHYPregisteredUserUTypet"/>
-<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(ℙ(USERS×UTYPES)))∈{USERS → UTYPES}" org.eventb.core.source="/Projeto1/GitBob.bum|org.eventb.core.machineFile#GitBob|org.eventb.core.invariant#+"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(ℙ(USERS×UTYPES)))∈ℙ(USERS → UTYPES)" org.eventb.core.source="/Projeto1/GitBob.bum|org.eventb.core.machineFile#GitBob|org.eventb.core.invariant#+"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Projeto1/GitBob.bum|org.eventb.core.machineFile#GitBob|org.eventb.core.event#'"/>
 <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Projeto1/GitBob.bum|org.eventb.core.machineFile#GitBob|org.eventb.core.invariant#+"/>
-<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Projeto1/GitBob.bpo|org.eventb.core.poFile#GitBob|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Projeto1/GitBob.bpo|org.eventb.core.poFile#GitBob|org.eventb.core.poSequent#INITIALISATION\/invariantRegUserEmail\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Projeto1/GitBob.bpo|org.eventb.core.poFile#GitBob|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Projeto1/GitBob.bpo|org.eventb.core.poFile#GitBob|org.eventb.core.poSequent#INITIALISATION\/invRegUserUType\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Projeto1/GitBob.bpo|org.eventb.core.poFile#GitBob|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="INITIALISATION/invariantRegUserUType/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="10">
+<org.eventb.core.poSequent name="INITIALISATION/invRegUserEMails/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="25">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Projeto1/GitBob.bpo|org.eventb.core.poFile#GitBob|org.eventb.core.poPredicateSet#EVTALLHYPregisteredUserUTypet"/>
-<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(ℙ(USERS×UEMAILS)))∈{USERS → UEMAILS}" org.eventb.core.source="/Projeto1/GitBob.bum|org.eventb.core.machineFile#GitBob|org.eventb.core.invariant#,"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(ℙ(USERS×UEMAILS)))∈ℙ(USERS ↣ UEMAILS)" org.eventb.core.source="/Projeto1/GitBob.bum|org.eventb.core.machineFile#GitBob|org.eventb.core.invariant#,"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Projeto1/GitBob.bum|org.eventb.core.machineFile#GitBob|org.eventb.core.event#'"/>
 <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Projeto1/GitBob.bum|org.eventb.core.machineFile#GitBob|org.eventb.core.invariant#,"/>
-<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Projeto1/GitBob.bpo|org.eventb.core.poFile#GitBob|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Projeto1/GitBob.bpo|org.eventb.core.poFile#GitBob|org.eventb.core.poSequent#INITIALISATION\/invariantRegUserUType\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Projeto1/GitBob.bpo|org.eventb.core.poFile#GitBob|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Projeto1/GitBob.bpo|org.eventb.core.poFile#GitBob|org.eventb.core.poSequent#INITIALISATION\/invRegUserEMails\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Projeto1/GitBob.bpo|org.eventb.core.poFile#GitBob|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTregisteredUserUTypet" org.eventb.core.parentSet="/Projeto1/GitBob.bpo|org.eventb.core.poFile#GitBob|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
-<org.eventb.core.poIdentifier name="registeredUserUTypes'" org.eventb.core.type="ℙ(ℙ(USERS×UEMAILS))"/>
-<org.eventb.core.poIdentifier name="registeredUserEMails'" org.eventb.core.type="ℙ(ℙ(USERS×UTYPES))"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTregisteredUserUTypet" org.eventb.core.parentSet="/Projeto1/GitBob.bpo|org.eventb.core.poFile#GitBob|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="25">
+<org.eventb.core.poIdentifier name="registeredUserUTypes'" org.eventb.core.type="ℙ(ℙ(USERS×UTYPES))"/>
+<org.eventb.core.poIdentifier name="registeredUserEMails'" org.eventb.core.type="ℙ(ℙ(USERS×UEMAILS))"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPregisteredUserUTypet" org.eventb.core.parentSet="/Projeto1/GitBob.bpo|org.eventb.core.poFile#GitBob|org.eventb.core.poPredicateSet#EVTIDENTregisteredUserUTypet" org.eventb.core.poStamp="0"/>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Projeto1/GitBob.bpo|org.eventb.core.poFile#GitBob|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="6">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="registeredUserEMails∈{USERS → UTYPES}" org.eventb.core.source="/Projeto1/GitBob.bum|org.eventb.core.machineFile#GitBob|org.eventb.core.invariant#+"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="registeredUserUTypes∈{USERS → UEMAILS}" org.eventb.core.source="/Projeto1/GitBob.bum|org.eventb.core.machineFile#GitBob|org.eventb.core.invariant#,"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPregisteredUserUTypet" org.eventb.core.parentSet="/Projeto1/GitBob.bpo|org.eventb.core.poFile#GitBob|org.eventb.core.poPredicateSet#EVTIDENTregisteredUserUTypet" org.eventb.core.poStamp="25"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTregisteredUserUTypeu" org.eventb.core.parentSet="/Projeto1/GitBob.bpo|org.eventb.core.poFile#GitBob|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="25">
+<org.eventb.core.poIdentifier name="type" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.poIdentifier name="mail" org.eventb.core.type="UEMAILS"/>
+<org.eventb.core.poIdentifier name="user" org.eventb.core.type="USERS"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPregisteredUserUTypeu" org.eventb.core.parentSet="/Projeto1/GitBob.bpo|org.eventb.core.poFile#GitBob|org.eventb.core.poPredicateSet#EVTIDENTregisteredUserUTypeu" org.eventb.core.poStamp="25">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="user∈USERS" org.eventb.core.source="/Projeto1/GitBob.bum|org.eventb.core.machineFile#GitBob|org.eventb.core.event#-|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="type∈UTYPES" org.eventb.core.source="/Projeto1/GitBob.bum|org.eventb.core.machineFile#GitBob|org.eventb.core.event#-|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="mail∈UEMAILS" org.eventb.core.source="/Projeto1/GitBob.bum|org.eventb.core.machineFile#GitBob|org.eventb.core.event#-|org.eventb.core.guard#,"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Projeto1/GitBob.bpo|org.eventb.core.poFile#GitBob|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="25">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="registeredUserUTypes∈ℙ(USERS → UTYPES)" org.eventb.core.source="/Projeto1/GitBob.bum|org.eventb.core.machineFile#GitBob|org.eventb.core.invariant#+"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="registeredUserEMails∈ℙ(USERS ↣ UEMAILS)" org.eventb.core.source="/Projeto1/GitBob.bum|org.eventb.core.machineFile#GitBob|org.eventb.core.invariant#,"/>
 </org.eventb.core.poPredicateSet>
 </org.eventb.core.poFile>
