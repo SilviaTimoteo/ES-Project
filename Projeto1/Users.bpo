@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0"/>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Projeto1/Users.bpo|org.eventb.core.poFile#Users|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poFile org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="UEMAILS" org.eventb.core.type="ℙ(UEMAILS)"/>
+<org.eventb.core.poIdentifier name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.poIdentifier name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Projeto1/Users.bpo|org.eventb.core.poFile#Users|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="1"/>
 </org.eventb.core.poFile>
