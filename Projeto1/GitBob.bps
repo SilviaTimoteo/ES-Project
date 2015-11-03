@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.psFile>
-<org.eventb.core.psStatus name="INITIALISATION/inv4/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="60" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="INITIALISATION/inv5/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="60" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="INITIALISATION/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="60" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="INITIALISATION/inv2/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="60" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="INITIALISATION/inv3/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="60" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="INITIALISATION/inv7/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="60" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="INITIALISATION/inv8/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="60" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="newUser/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="60" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="newUser/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="60" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="removeUser/inv4/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="60" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="removeUser/inv5/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="60" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="upgradePremium/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="60" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="upgradePremium/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="60" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="downgradeBasic/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="61" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="downgradeBasic/grd4/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="61" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="downgradeBasic/grd5/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="61" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="downgradeBasic/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="61" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv4/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="66" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv5/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="65" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="65" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv2/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="65" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv3/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="65" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv7/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="65" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv8/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="65" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="newUser/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="66" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="newUser/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="66" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="removeUser/inv4/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="66" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="removeUser/inv5/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="66" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="upgradePremium/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="66" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="upgradePremium/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="66" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="downgradeBasic/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="66" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="downgradeBasic/grd4/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="66" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="downgradeBasic/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="66" org.eventb.core.psManual="false"/>
 </org.eventb.core.psFile>
