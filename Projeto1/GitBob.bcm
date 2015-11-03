@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.scMachineFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;de.prob.units.mchBase">
-<org.eventb.core.scEvent name="'" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION" org.eventb.core.source="/Projeto1/GitBob.bum|org.eventb.core.machineFile#GitBob|org.eventb.core.event#'"/>
+<org.eventb.core.scSeesContext name="'" org.eventb.core.scTarget="/Projeto1/Users.bcc" org.eventb.core.source="/Projeto1/GitBob.bum|org.eventb.core.machineFile#GitBob|org.eventb.core.seesContext#("/>
+<org.eventb.core.scInternalContext name="Users">
+<org.eventb.core.scAxiom name="'" org.eventb.core.label="axm3" org.eventb.core.predicate="partition(UTYPES,{BASIC},{PREMIUM})" org.eventb.core.source="/Projeto1/Users.buc|org.eventb.core.contextFile#Users|org.eventb.core.axiom#." org.eventb.core.theorem="false"/>
+<org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" de.prob.units.unitPragmaAttribute="" name="BASIC" org.eventb.core.source="/Projeto1/Users.buc|org.eventb.core.contextFile#Users|org.eventb.core.constant#\/" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" de.prob.units.unitPragmaAttribute="" name="PREMIUM" org.eventb.core.source="/Projeto1/Users.buc|org.eventb.core.contextFile#Users|org.eventb.core.constant#0" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.scCarrierSet name="UEMAILS" org.eventb.core.source="/Projeto1/Users.buc|org.eventb.core.contextFile#Users|org.eventb.core.carrierSet#)" org.eventb.core.type="ℙ(UEMAILS)"/>
+<org.eventb.core.scCarrierSet name="USERS" org.eventb.core.source="/Projeto1/Users.buc|org.eventb.core.contextFile#Users|org.eventb.core.carrierSet#'" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.scCarrierSet name="UTYPES" org.eventb.core.source="/Projeto1/Users.buc|org.eventb.core.contextFile#Users|org.eventb.core.carrierSet#(" org.eventb.core.type="ℙ(UTYPES)"/>
+</org.eventb.core.scInternalContext>
+<org.eventb.core.scInvariant name="Usert" org.eventb.core.label="invariantRegUserEmail" org.eventb.core.predicate="registeredUserEMails∈{USERS → UTYPES}" org.eventb.core.source="/Projeto1/GitBob.bum|org.eventb.core.machineFile#GitBob|org.eventb.core.invariant#+" org.eventb.core.theorem="false"/>
+<org.eventb.core.scInvariant name="Useru" org.eventb.core.label="invariantRegUserUType" org.eventb.core.predicate="registeredUserUTypes∈{USERS → UEMAILS}" org.eventb.core.source="/Projeto1/GitBob.bum|org.eventb.core.machineFile#GitBob|org.eventb.core.invariant#," org.eventb.core.theorem="false"/>
+<org.eventb.core.scVariable de.prob.units.unitPragmaAttribute="" name="registeredUserEMails" org.eventb.core.abstract="false" org.eventb.core.concrete="true" org.eventb.core.source="/Projeto1/GitBob.bum|org.eventb.core.machineFile#GitBob|org.eventb.core.variable#)" org.eventb.core.type="ℙ(ℙ(USERS×UTYPES))"/>
+<org.eventb.core.scVariable de.prob.units.unitPragmaAttribute="" name="registeredUserUTypes" org.eventb.core.abstract="false" org.eventb.core.concrete="true" org.eventb.core.source="/Projeto1/GitBob.bum|org.eventb.core.machineFile#GitBob|org.eventb.core.variable#*" org.eventb.core.type="ℙ(ℙ(USERS×UEMAILS))"/>
+<org.eventb.core.scEvent name="registeredUserUTypet" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION" org.eventb.core.source="/Projeto1/GitBob.bum|org.eventb.core.machineFile#GitBob|org.eventb.core.event#'">
+<org.eventb.core.scAction name="'" org.eventb.core.assignment="registeredUserEMails ≔ ∅ ⦂ ℙ(ℙ(USERS×UTYPES))" org.eventb.core.label="act1" org.eventb.core.source="/Projeto1/GitBob.bum|org.eventb.core.machineFile#GitBob|org.eventb.core.event#'|org.eventb.core.action#'"/>
+<org.eventb.core.scAction name="(" org.eventb.core.assignment="registeredUserUTypes ≔ ∅ ⦂ ℙ(ℙ(USERS×UEMAILS))" org.eventb.core.label="act2" org.eventb.core.source="/Projeto1/GitBob.bum|org.eventb.core.machineFile#GitBob|org.eventb.core.event#'|org.eventb.core.action#("/>
+</org.eventb.core.scEvent>
 </org.eventb.core.scMachineFile>
