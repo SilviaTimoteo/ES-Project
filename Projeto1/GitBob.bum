@@ -57,7 +57,7 @@
 <org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="3" org.eventb.core.comment="usado para guardar os ficheiros e sua versão respectivo" org.eventb.core.identifier="fileVersion"/>
 <org.eventb.core.invariant name="4" org.eventb.core.label="inv1" org.eventb.core.predicate="fileSize ∈ FILES → ℕ"/>
 <org.eventb.core.invariant name="5" org.eventb.core.label="inv2" org.eventb.core.predicate="fileOwner ∈ FILES → USERS"/>
-<org.eventb.core.invariant name="6" org.eventb.core.label="inv3" org.eventb.core.predicate="fileVersion ∈ FILES → ℕ"/>
+<org.eventb.core.invariant name="6" org.eventb.core.label="inv3" org.eventb.core.predicate="fileVersion ∈ FILES → ℕ1"/>
 <org.eventb.core.seesContext name="7" org.eventb.core.target="Files"/>
 <org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="8" org.eventb.core.comment="usado para guardar os users com que o file ta partilhado" org.eventb.core.identifier="fileSharing"/>
 <org.eventb.core.invariant name="9" org.eventb.core.label="inv6" org.eventb.core.predicate="fileSharing ∈ FILES ↔ USERS"/>
