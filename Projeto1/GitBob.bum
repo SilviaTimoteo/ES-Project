@@ -7,6 +7,8 @@
 <org.eventb.core.action name="*" org.eventb.core.assignment="fileOwner ≔ ∅" org.eventb.core.comment="At the beginning there are no ﬁles in GitBob" org.eventb.core.label="act4"/>
 <org.eventb.core.action name="+" org.eventb.core.assignment="fileVersion ≔ ∅" org.eventb.core.comment="At the beginning there are no ﬁles in GitBob" org.eventb.core.label="act5"/>
 <org.eventb.core.action name="," org.eventb.core.assignment="fileSharing ≔ ∅" org.eventb.core.comment="At the beginning there are no ﬁles in GitBob" org.eventb.core.label="act6"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="fileMode ≔ ∅" org.eventb.core.label="act7"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="fileBackupOn ≔ ∅" org.eventb.core.label="act8"/>
 </org.eventb.core.event>
 <org.eventb.core.seesContext name="(" org.eventb.core.target="Users"/>
 <org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name=")" org.eventb.core.comment="usado para guardar os users registados e os seus Emails respectivos" org.eventb.core.identifier="registeredUserEMails"/>
@@ -25,7 +27,7 @@
 <org.eventb.core.action name="0" org.eventb.core.assignment="registeredUserEMails≔registeredUserEMails ∪ {user ↦ mail}" org.eventb.core.label="act1"/>
 <org.eventb.core.action name="1" org.eventb.core.assignment="registeredUserUTypes≔registeredUserUTypes ∪ {user ↦ type}" org.eventb.core.label="act2"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="." org.eventb.core.comment="falta fazer a guarda sobre nao puder remover donos de ficheiros e malta envolvida em partilhas; Falta remover o acesso as versoes dos seus ficheiros" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="removeUser">
+<org.eventb.core.event name="." org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="removeUser">
 <org.eventb.core.action name="'" org.eventb.core.assignment="registeredUserEMails ≔ {user} ⩤ registeredUserEMails" org.eventb.core.label="act1"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="registeredUserUTypes ≔ {user} ⩤ registeredUserUTypes " org.eventb.core.label="act2"/>
 <org.eventb.core.parameter name=")" org.eventb.core.identifier="user"/>
@@ -43,10 +45,12 @@
 </org.eventb.core.event>
 <org.eventb.core.event name="0" org.eventb.core.comment="falta fazer a guarda relativo a restriçao 31 e 45" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="downgradeBasic">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="user"/>
-<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="user ∈ USERS"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="user ∈ USERS" org.eventb.core.theorem="true"/>
 <org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∈ dom(registeredUserEMails) ∧ user ∈ dom(registeredUserUTypes)"/>
 <org.eventb.core.guard name="*" org.eventb.core.label="grd3" org.eventb.core.predicate="registeredUserUTypes(user) = PREMIUM"/>
 <org.eventb.core.action name="+" org.eventb.core.assignment="registeredUserUTypes(user) ≔ BASIC" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="∀f·(f ∈ fileSharing∼[{user}] ∧ fileMode(f) ≠ SECURE)"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd5" org.eventb.core.predicate="∀f·(f ∈ fileSharing∼[{user}] ∧ (fileBackupOn(f) = FALSE ∨ ∃u·(u∈USERS ∧ (registeredUserUTypes(u) = PREMIUM))))"/>
 </org.eventb.core.event>
 <org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="1" org.eventb.core.comment="usado para guardar os ficheiros e seu tamanho respectivo" org.eventb.core.identifier="fileSize"/>
 <org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="2" org.eventb.core.comment="usado para guardar os ficheiros e seu Owner respectivo" org.eventb.core.identifier="fileOwner"/>
@@ -57,4 +61,8 @@
 <org.eventb.core.seesContext name="7" org.eventb.core.target="Files"/>
 <org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="8" org.eventb.core.comment="usado para guardar os users com que o file ta partilhado" org.eventb.core.identifier="fileSharing"/>
 <org.eventb.core.invariant name="9" org.eventb.core.label="inv6" org.eventb.core.predicate="fileSharing ∈ FILES ↔ USERS"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name=":" org.eventb.core.comment="usado para guardar o modo do ficheiro" org.eventb.core.identifier="fileMode"/>
+<org.eventb.core.invariant name=";" org.eventb.core.label="inv7" org.eventb.core.predicate="fileMode ∈ FILES → MODES"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="=" org.eventb.core.identifier="fileBackupOn"/>
+<org.eventb.core.invariant name="&gt;" org.eventb.core.label="inv8" org.eventb.core.predicate="fileBackupOn ∈ FILES → BOOL"/>
 </org.eventb.core.machineFile>
