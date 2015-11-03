@@ -50,7 +50,7 @@
 <org.eventb.core.guard name="*" org.eventb.core.label="grd3" org.eventb.core.predicate="registeredUserUTypes(user) = PREMIUM"/>
 <org.eventb.core.action name="+" org.eventb.core.assignment="registeredUserUTypes(user) ≔ BASIC" org.eventb.core.label="act1"/>
 <org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="∀f·(f ∈ fileSharing∼[{user}] ∧ fileMode(f) ≠ SECURE)"/>
-<org.eventb.core.guard name="-" org.eventb.core.label="grd5" org.eventb.core.predicate="∀f·(f ∈ fileSharing∼[{user}] ∧ (fileBackupOn(f) = FALSE ∨ ∃u·(u∈USERS ∧  )"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd5" org.eventb.core.predicate="∀f·(f ∈ fileSharing∼[{user}] ∧ (fileBackupOn(f) = FALSE ∨ ∃u·(u∈USERS ∧ registeredUserUTypes(u) = PREMIUM )))"/>
 </org.eventb.core.event>
 <org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="1" org.eventb.core.comment="usado para guardar os ficheiros e seu tamanho respectivo" org.eventb.core.identifier="fileSize"/>
 <org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="2" org.eventb.core.comment="usado para guardar os ficheiros e seu Owner respectivo" org.eventb.core.identifier="fileOwner"/>
