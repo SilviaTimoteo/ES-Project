@@ -11,15 +11,30 @@
 <org.eventb.core.action name="*" org.eventb.core.assignment="fileOwner ≔ ∅" org.eventb.core.comment="At the beginning there are no files in GitBob" org.eventb.core.label="act4"/>
 <org.eventb.core.action name="+" org.eventb.core.assignment="fileVersion ≔ ∅" org.eventb.core.comment="At the beginning there are no files in GitBob" org.eventb.core.label="act5"/>
 <org.eventb.core.action name="," org.eventb.core.assignment="localFiles ≔ ∅" org.eventb.core.comment="At the beginning there are no files in GitBob" org.eventb.core.label="act6"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="archFSize ≔ ∅" org.eventb.core.label="act7"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="archFOwner ≔ ∅" org.eventb.core.label="act8"/>
+<org.eventb.core.action name="/" org.eventb.core.assignment="archFVersion ≔ ∅" org.eventb.core.label="act9"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="," org.eventb.core.comment="Creates a new user with identiﬁer usr, with the given proﬁle type, and with the given e-mail " org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="newUser">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="newUser"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="-" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="removeUser">
+<org.eventb.core.event name="-" org.eventb.core.comment="must refinar quando fizermos os shares(R24 e R43)" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="removeUser">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="removeUser"/>
+<org.eventb.core.action name="'" org.eventb.core.assignment="registeredUserEMails ≔ {user} ⩤ registeredUserEMails" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="registeredUserUTypes ≔ {user} ⩤ registeredUserUTypes" org.eventb.core.label="act2"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="user"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="user ∈ USERS"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∈ dom(registeredUserEMails) ∧ user ∈ dom(registeredUserUTypes)"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="fileOwner∼[{user}] = ∅"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="archFOwner ≔ archFOwner ⩥ {user}" org.eventb.core.label="act4"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="." org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="upgradePremium">
+<org.eventb.core.event name="." org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="upgradePremium">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="upgradePremium"/>
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="user"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="user ∈ USERS"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="user está registado" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∈ dom(registeredUserEMails) ∧ user ∈ dom(registeredUserUTypes)"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd3" org.eventb.core.predicate="registeredUserUTypes(user)=BASIC"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="registeredUserUTypes(user) ≔ PREMIUM" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="/" org.eventb.core.comment="falta fazer a guarda relativo a restriçao 31 e 45" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="downgradeBasic">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="downgradeBasic"/>
@@ -47,17 +62,43 @@
 <org.eventb.core.event name=";" org.eventb.core.comment="needs to be refined when there's sharing " org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="removeFile">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="file"/>
 <org.eventb.core.parameter name="(" org.eventb.core.identifier="user"/>
-<org.eventb.core.action name="act1" org.eventb.core.assignment="fileVersion ≔ {file} ⩤ fileVersion" org.eventb.core.label="act1"/>
-<org.eventb.core.action name="act2" org.eventb.core.assignment="fileSize ≔ {file} ⩤ fileSize" org.eventb.core.label="act2"/>
-<org.eventb.core.action name="act3" org.eventb.core.assignment="fileOwner ≔ {file} ⩤ fileOwner" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="act2" org.eventb.core.assignment="archFSize(file) ≔ fileSize(file)" org.eventb.core.label="act7"/>
+<org.eventb.core.action name="act3" org.eventb.core.assignment="archFVersion(file) ≔ fileVersion(file)" org.eventb.core.label="act6"/>
 <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="file ∈ FILES"/>
 <org.eventb.core.guard name="act5" org.eventb.core.label="grd5" org.eventb.core.predicate="user ∈ USERS"/>
-<org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="file ∈ dom(fileSize) ∧ file ∈ dom(fileOwner) ∧ file ∈ dom(fileVersion)"/>
-<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="fileOwner(file) = user"/>
-<org.eventb.core.action name="act4" org.eventb.core.assignment="localFiles ≔ localFiles ⩥ {file}" org.eventb.core.label="act4"/>
+<org.eventb.core.guard name="-" org.eventb.core.comment="ver se o ficheiro existe no Git" org.eventb.core.label="grd4" org.eventb.core.predicate="file ∈ dom(fileSize) ∧ file ∈ dom(fileOwner) ∧ file ∈ dom(fileVersion)"/>
+<org.eventb.core.guard name="," org.eventb.core.comment="isto tem de depois ter os gajos do shared" org.eventb.core.label="grd3" org.eventb.core.predicate="fileOwner(file) = user"/>
+<org.eventb.core.action name="act4" org.eventb.core.assignment="archFOwner(file) ≔ fileOwner(file)" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="act5" org.eventb.core.assignment="fileVersion ≔ {file} ⩤ fileVersion" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="act6" org.eventb.core.assignment="fileSize ≔ {file} ⩤ fileSize" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="act7" org.eventb.core.assignment="fileOwner ≔ {file} ⩤ fileOwner" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="act8" org.eventb.core.assignment="localFiles ≔ localFiles ⩥ {file}" org.eventb.core.label="act4"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="=" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="uploadFile"/>
-<org.eventb.core.event name="&gt;" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="downloadFile"/>
+<org.eventb.core.event name="=" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="uploadFile">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="file"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="user"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="file ∈ FILES"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∈ USERS"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="file ∈ dom(fileSize) ∧ file ∈ dom(fileOwner) ∧ file ∈ dom(fileVersion)"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="fileVersion(file) ≔ fileVersion(file) + 1" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd5" org.eventb.core.predicate="user ↦ file ∈ localFiles"/>
+<org.eventb.core.guard name="/" org.eventb.core.label="grd6" org.eventb.core.predicate="file ∈ dom(fileVersion)"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="&gt;" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="downloadFile">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="user ∈ USERS"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="file"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="user"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="file ∈ FILES"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="file ∈ dom(fileSize) ∧ file ∈ dom(fileOwner) ∧ file ∈ dom(fileVersion)"/>
+<org.eventb.core.guard name="," org.eventb.core.comment="isto tem de depois ter os gajos do shared" org.eventb.core.label="grd4" org.eventb.core.predicate="fileOwner(file) = user"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="localFiles ≔ localFiles ∪ {user ↦ file}" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
 <org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="?" org.eventb.core.comment="repositorio local de cada User" org.eventb.core.identifier="localFiles"/>
 <org.eventb.core.invariant name="@" org.eventb.core.label="inv4" org.eventb.core.predicate="localFiles ∈ USERS ↔ FILES"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="A" org.eventb.core.identifier="archFSize"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="B" org.eventb.core.identifier="archFOwner"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="C" org.eventb.core.identifier="archFVersion"/>
+<org.eventb.core.invariant name="D" org.eventb.core.label="inv5" org.eventb.core.predicate="archFSize ∈ FILES ⇸ ℕ"/>
+<org.eventb.core.invariant name="E" org.eventb.core.label="inv6" org.eventb.core.predicate="archFOwner ∈ FILES ⇸ USERS"/>
+<org.eventb.core.invariant name="F" org.eventb.core.label="inv7" org.eventb.core.predicate="archFVersion ∈ FILES ⇸ ℕ1"/>
 </org.eventb.core.machineFile>
