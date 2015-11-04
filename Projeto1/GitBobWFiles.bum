@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.units.mchBase" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="GitBob"/>
+<org.eventb.core.seesContext name="(" org.eventb.core.target="Users"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="unknown -&gt; unknown" de.prob.units.unitPragmaAttribute="" name=")" org.eventb.core.comment="usado para guardar os users registados e os seus Emails respectivos" org.eventb.core.identifier="registeredUserEMails"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="unknown -&gt; unknown" de.prob.units.unitPragmaAttribute="" name="*" org.eventb.core.comment="usado para guardar os users registados e os seus tipos respectivos" org.eventb.core.identifier="registeredUserUTypes"/>
+<org.eventb.core.event name="+" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="registeredUserEMails ≔ ∅" org.eventb.core.comment="At the beginning there are no registered users in GitBob" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="registeredUserUTypes ≔ ∅" org.eventb.core.comment="At the beginning there are no registered users in GitBob" org.eventb.core.label="act2"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="fileSize ≔ ∅" org.eventb.core.comment="At the beginning there are no files in GitBob" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="fileOwner ≔ ∅" org.eventb.core.comment="At the beginning there are no files in GitBob" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="fileVersion ≔ ∅" org.eventb.core.comment="At the beginning there are no files in GitBob" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="localFiles ≔ ∅" org.eventb.core.comment="At the beginning there are no files in GitBob" org.eventb.core.label="act6"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="," org.eventb.core.comment="Creates a new user with identiﬁer usr, with the given proﬁle type, and with the given e-mail " org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="newUser">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="newUser"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="-" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="removeUser">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="removeUser"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="." org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="upgradePremium">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="upgradePremium"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="/" org.eventb.core.comment="falta fazer a guarda relativo a restriçao 31 e 45" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="downgradeBasic">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="downgradeBasic"/>
+</org.eventb.core.event>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="0" org.eventb.core.comment="usado para guardar os ficheiros e o seu tamanho respetivo" org.eventb.core.identifier="fileSize"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="1" org.eventb.core.comment="usado para guardar os ficheiros e o seu Owner respectivo" org.eventb.core.identifier="fileOwner"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="2" org.eventb.core.comment="usado para guardar os ficheiros e a sua versão respectiva" org.eventb.core.identifier="fileVersion"/>
+<org.eventb.core.invariant name="6" org.eventb.core.label="inv1" org.eventb.core.predicate="fileSize ∈ FILES ⇸ ℕ"/>
+<org.eventb.core.invariant name="7" org.eventb.core.label="inv2" org.eventb.core.predicate="fileOwner ∈ FILES ⇸ USERS"/>
+<org.eventb.core.invariant name="8" org.eventb.core.label="inv3" org.eventb.core.predicate="fileVersion ∈ FILES ⇸ ℕ1"/>
+<org.eventb.core.seesContext name="9" org.eventb.core.target="Files"/>
+<org.eventb.core.event name=":" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="addFile">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="file"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="size"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="owner"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="file ∈ FILES"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="size ∈ ℕ"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="owner ∈ USERS"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.comment="ver se o owner ja ta registado no gitBob" org.eventb.core.label="grd4" org.eventb.core.predicate="owner ∈ dom(registeredUserEMails) ∧ owner ∈ dom(registeredUserUTypes)"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.comment="verificar se ficheiro ja existe no gitBob" org.eventb.core.label="grd5" org.eventb.core.predicate="file ∉ dom(fileSize) ∧ file ∉ dom(fileOwner) ∧ file ∉ dom(fileVersion)"/>
+<org.eventb.core.action name="grd3" org.eventb.core.assignment="fileVersion(file) ≔ 1" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="grd4" org.eventb.core.assignment="fileSize(file) ≔ size" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="grd5" org.eventb.core.assignment="fileOwner(file) ≔ owner" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="grd6" org.eventb.core.assignment="localFiles(owner) ≔ file" org.eventb.core.label="act4"/>
+</org.eventb.core.event>
+<org.eventb.core.event name=";" org.eventb.core.comment="needs to be refined when there's sharing " org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="removeFile">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="file"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="user"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="fileVersion ≔ {file} ⩤ fileVersion" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="act2" org.eventb.core.assignment="fileSize ≔ {file} ⩤ fileSize" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="act3" org.eventb.core.assignment="fileOwner ≔ {file} ⩤ fileOwner" org.eventb.core.label="act3"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="file ∈ FILES"/>
+<org.eventb.core.guard name="act5" org.eventb.core.label="grd5" org.eventb.core.predicate="user ∈ USERS"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="file ∈ dom(fileSize) ∧ file ∈ dom(fileOwner) ∧ file ∈ dom(fileVersion) "/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="user = fileOwner(file)"/>
+<org.eventb.core.action name="act4" org.eventb.core.assignment="localFiles ≔ localFiles ⩥ {file}" org.eventb.core.label="act4"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="=" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="uploadFile"/>
+<org.eventb.core.event name="&gt;" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="downloadFile"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="?" org.eventb.core.comment="repositorio local de cada User" org.eventb.core.identifier="localFiles"/>
+<org.eventb.core.invariant name="@" org.eventb.core.label="inv4" org.eventb.core.predicate="localFiles ∈ USERS ↔ FILES"/>
+</org.eventb.core.machineFile>

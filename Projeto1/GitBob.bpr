@@ -957,8 +957,8 @@
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="user∉dom(registeredUserEMails)∧user∉dom(registeredUserUTypes)"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="type∈UTYPES"/>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="registeredUserUTypes∈USERS ⇸ UTYPES"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="registeredUserUTypes{user ↦ type}∈USERS ⇸ UTYPES"/>
 <org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬user∈dom(registeredUserEMails)"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="registeredUserUTypes∪{user ↦ type}∈USERS ⇸ UTYPES"/>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="registeredUserEMails∈USERS ⤔ UEMAILS"/>
 <org.eventb.core.prPred name="p13" org.eventb.core.predicate="mail∈UEMAILS"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="mail∉ran(registeredUserEMails)"/>
@@ -967,10 +967,10 @@
 <org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬user∈dom(registeredUserUTypes)"/>
 <org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬BASIC=PREMIUM"/>
 <org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬mail∈ran(registeredUserEMails)"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="newUser/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5" org.eventb.core.prSets="UEMAILS,USERS,UTYPES">
 <org.eventb.core.lang name="L"/>
@@ -1004,13 +1004,13 @@
 <org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
 <org.eventb.core.prIdent name="user" org.eventb.core.type="USERS"/>
 <org.eventb.core.prPred name="p11" org.eventb.core.predicate="user∈USERS"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="registeredUserEMails{user ↦ mail}∈USERS ⤔ UEMAILS"/>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="user∉dom(registeredUserEMails)∧user∉dom(registeredUserUTypes)"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="type∈UTYPES">
 <org.eventb.core.prIdent name="type" org.eventb.core.type="UTYPES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="registeredUserUTypes∈USERS ⇸ UTYPES"/>
 <org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬user∈dom(registeredUserEMails)"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="registeredUserEMails∪{user ↦ mail}∈USERS ⤔ UEMAILS"/>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="registeredUserEMails∈USERS ⤔ UEMAILS"/>
 <org.eventb.core.prPred name="p13" org.eventb.core.predicate="mail∈UEMAILS"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="mail∉ran(registeredUserEMails)"/>
@@ -1019,10 +1019,10 @@
 <org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬user∈dom(registeredUserUTypes)"/>
 <org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬BASIC=PREMIUM"/>
 <org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬mail∈ran(registeredUserEMails)"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="removeUser/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="UEMAILS,USERS,UTYPES">
 <org.eventb.core.lang name="L"/>
