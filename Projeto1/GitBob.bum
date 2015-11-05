@@ -37,7 +37,7 @@
 </org.eventb.core.event>
 <org.eventb.core.event name="0" org.eventb.core.comment="falta fazer a guarda relativo a restriçao 31 e 45" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="downgradeBasic">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="user"/>
-<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="user ∈ USERS" org.eventb.core.theorem="true"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="user ∈ USERS"/>
 <org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∈ dom(registeredUserEMails) ∧ user ∈ dom(registeredUserUTypes)"/>
 <org.eventb.core.guard name="*" org.eventb.core.label="grd3" org.eventb.core.predicate="registeredUserUTypes(user) = PREMIUM"/>
 <org.eventb.core.action name="+" org.eventb.core.assignment="registeredUserUTypes(user) ≔ BASIC" org.eventb.core.label="act1"/>
