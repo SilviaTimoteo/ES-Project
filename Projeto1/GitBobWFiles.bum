@@ -69,6 +69,8 @@
 <org.eventb.core.action name="act6" org.eventb.core.assignment="fileSize ≔ {file} ⩤ fileSize" org.eventb.core.label="act2"/>
 <org.eventb.core.action name="act7" org.eventb.core.assignment="fileOwner ≔ {file} ⩤ fileOwner" org.eventb.core.label="act3"/>
 <org.eventb.core.action name="act8" org.eventb.core.assignment="localFiles ≔ localFiles ⩥ {file}" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="act9" org.eventb.core.assignment="fileBackups ≔ {file} ⩤ fileBackups" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="act:" org.eventb.core.assignment="fileBMode ≔ {file} ⩤ fileBMode" org.eventb.core.label="act6"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="=" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="uploadFile">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="file"/>

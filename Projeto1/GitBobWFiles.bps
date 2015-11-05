@@ -11,10 +11,12 @@
 <org.eventb.core.psStatus name="addFile/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="93" org.eventb.core.psManual="false"/>
 <org.eventb.core.psStatus name="addFile/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="93" org.eventb.core.psManual="false"/>
 <org.eventb.core.psStatus name="addFile/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="93" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="removeFile/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="93" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="removeFile/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="93" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="removeFile/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="93" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="removeFile/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="93" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="removeFile/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="101" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="removeFile/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="101" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="removeFile/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="101" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="removeFile/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="101" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="removeFile/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="101" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="removeFile/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="101" org.eventb.core.psManual="false"/>
 <org.eventb.core.psStatus name="uploadFile/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="93" org.eventb.core.psManual="false"/>
 <org.eventb.core.psStatus name="uploadFile/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="93" org.eventb.core.psManual="false"/>
 <org.eventb.core.psStatus name="uploadFile/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="93" org.eventb.core.psManual="false"/>
