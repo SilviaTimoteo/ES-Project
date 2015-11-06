@@ -16,7 +16,7 @@
 <org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="unknown -&gt; unknown" de.prob.units.unitPragmaAttribute="" name="var1" org.eventb.core.identifier="fileBackups"/>
 <org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="unknown -&gt; boolean" de.prob.units.unitPragmaAttribute="" name="var2" org.eventb.core.identifier="fileBMode"/>
 <org.eventb.core.event name="var3" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
-<org.eventb.core.action name="internal1" org.eventb.core.assignment="registeredUserEMails ≔ ∅" org.eventb.core.comment="At the beginning there are no registered users in GitBob" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="internal3" org.eventb.core.assignment="registeredUserEMails ≔ ∅" org.eventb.core.comment="At the beginning there are no registered users in GitBob" org.eventb.core.label="act1"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="registeredUserUTypes ≔ ∅" org.eventb.core.comment="At the beginning there are no registered users in GitBob" org.eventb.core.label="act2"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="fileSize ≔ ∅" org.eventb.core.comment="At the beginning there are no files in GitBob" org.eventb.core.label="act3"/>
 <org.eventb.core.action name="*" org.eventb.core.assignment="fileOwner ≔ ∅" org.eventb.core.comment="At the beginning there are no files in GitBob" org.eventb.core.label="act4"/>
@@ -27,6 +27,7 @@
 <org.eventb.core.action name="act1" org.eventb.core.assignment="fileBMode ≔ ∅" org.eventb.core.label="act7"/>
 <org.eventb.core.action name="act2" org.eventb.core.assignment="fileBackups ≔ ∅" org.eventb.core.label="act8"/>
 <org.eventb.core.action name="3" org.eventb.core.assignment="archFAccess ≔ ∅" org.eventb.core.label="act13"/>
+<org.eventb.core.action name="internal2" org.eventb.core.assignment="domainLF ≔ ∅" org.eventb.core.label="act16"/>
 <org.eventb.core.action name="4" org.eventb.core.assignment="archFVersion ≔ ∅" org.eventb.core.label="act14"/>
 <org.eventb.core.action name="'" org.eventb.core.assignment="localFiles ≔ ∅" org.eventb.core.label="act15"/>
 </org.eventb.core.event>
@@ -58,7 +59,7 @@
 <org.eventb.core.action name="internal1" org.eventb.core.assignment="fileBMode(file) ≔ FALSE" org.eventb.core.label="act4"/>
 <org.eventb.core.action name="grd7" org.eventb.core.assignment="fileModes(file) ≔ REGULAR" org.eventb.core.label="act5"/>
 <org.eventb.core.action name="grd6" org.eventb.core.assignment="fileSharing ≔ fileSharing ∪ {file ↦ owner}" org.eventb.core.label="act6"/>
-<org.eventb.core.action name="(" org.eventb.core.assignment="localFiles ≔ localFiles ∪ {file ↦ {owner ↦ 1}}" org.eventb.core.label="act7"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="localFiles ≔ localFiles ∪ {{file ↦ owner} ↦ 1}" org.eventb.core.label="act7"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="var9" org.eventb.core.comment="needs to be refined when there's sharing " org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="removeFile">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="removeFile"/>
@@ -66,6 +67,7 @@
 <org.eventb.core.parameter name="(" org.eventb.core.identifier="user"/>
 <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="file ∈ FILES"/>
 <org.eventb.core.guard name="act5" org.eventb.core.label="grd5" org.eventb.core.predicate="user ∈ USERS"/>
+<org.eventb.core.guard name="internal5" org.eventb.core.label="grd7" org.eventb.core.predicate="user ∈ dom(registeredUserEMails) ∧ user ∈ dom(registeredUserUTypes)"/>
 <org.eventb.core.guard name="-" org.eventb.core.comment="ver se o ficheiro existe no Git" org.eventb.core.label="grd4" org.eventb.core.predicate="file ∈ dom(fileSize) ∧ file ∈ dom(fileOwner) ∧ file ∈ dom(fileVersion)"/>
 <org.eventb.core.action name="act5" org.eventb.core.assignment="fileVersion ≔ {file} ⩤ fileVersion" org.eventb.core.label="act1"/>
 <org.eventb.core.action name="act6" org.eventb.core.assignment="fileSize ≔ {file} ⩤ fileSize" org.eventb.core.label="act2"/>
@@ -77,8 +79,10 @@
 <org.eventb.core.action name="act:" org.eventb.core.assignment="archFSize(file) ≔ fileSize(file)" org.eventb.core.label="act5"/>
 <org.eventb.core.action name="act;" org.eventb.core.assignment="archFAccess ≔ archFAccess ∪ ({file} ◁ fileSharing)" org.eventb.core.label="act9"/>
 <org.eventb.core.action name="act=" org.eventb.core.assignment="archFVersion(file) ≔ fileVersion(file)" org.eventb.core.label="act7"/>
+<org.eventb.core.action name="internal2" org.eventb.core.assignment="domainLF ≔ domainLF ∪ dom(localFiles)" org.eventb.core.label="act13"/>
+<org.eventb.core.action name="internal4" org.eventb.core.assignment="domainLF ≔ {file} ◁ domainLF" org.eventb.core.label="act15"/>
+<org.eventb.core.action name="internal3" org.eventb.core.assignment="localFiles ≔ localFiles " org.eventb.core.label="act14"/>
 <org.eventb.core.action name="actB" org.eventb.core.assignment="fileSharing ≔ {file} ⩤ fileSharing" org.eventb.core.label="act12"/>
-<org.eventb.core.action name="(" org.eventb.core.assignment="localFiles ≔ {file} ⩤ localFiles " org.eventb.core.label="act13"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="var:" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="uploadFile">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="uploadFile"/>
@@ -86,23 +90,58 @@
 <org.eventb.core.parameter name="(" org.eventb.core.identifier="user"/>
 <org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="file ∈ FILES"/>
 <org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∈ USERS"/>
+<org.eventb.core.guard name="2" org.eventb.core.label="grd9" org.eventb.core.predicate="user ∈ dom(registeredUserEMails) ∧ user ∈ dom(registeredUserUTypes)"/>
 <org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="file ∈ dom(fileSize) ∧ file ∈ dom(fileOwner) ∧ file ∈ dom(fileVersion)"/>
 <org.eventb.core.action name="-" org.eventb.core.assignment="fileVersion(file) ≔ fileVersion(file) + 1" org.eventb.core.label="act1"/>
-<org.eventb.core.guard name="/" org.eventb.core.label="grd6" org.eventb.core.predicate="file ∈ dom(fileVersion)"/>
 <org.eventb.core.guard name="0" org.eventb.core.label="grd7" org.eventb.core.predicate="file ↦ READONLY ∈ fileModes ⇒ file ↦ user ∈ fileOwner"/>
-<org.eventb.core.guard name="3" org.eventb.core.label="grd8" org.eventb.core.predicate="file ∈ dom(localFiles)"/>
-<org.eventb.core.guard name="4" org.eventb.core.label="grd11" org.eventb.core.predicate="dom(localFiles(file)) ⊆ USERS "/>
-<org.eventb.core.guard name="2" org.eventb.core.label="grd9" org.eventb.core.predicate="user ∈ dom(localFiles(file))"/>
-<org.eventb.core.guard name="1" org.eventb.core.label="grd10" org.eventb.core.predicate="localFiles(file)(user) = fileVersion(file)"/>
+<org.eventb.core.guard name="/" org.eventb.core.label="grd6" org.eventb.core.predicate="file ∈ dom(fileVersion)"/>
+<org.eventb.core.guard name="3" org.eventb.core.label="grd10" org.eventb.core.predicate="fileVersion(file) = localFiles({file ↦ user})"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="var;" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="downloadFile">
+<org.eventb.core.event name="var;" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="downloadFile">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="downloadFile"/>
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="user ∈ USERS"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="file"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="user"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="file ∈ FILES"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="file ∈ dom(fileSize) ∧ file ∈ dom(fileOwner) ∧ file ∈ dom(fileVersion)"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="fileOwner(file) = user ∨ file ↦ user ∈ fileSharing"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="localFiles({file ↦ user}) ≔ fileVersion(file)" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="var=" org.eventb.core.comment="faltam coisas nas invariantes" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="shareFile">
+<org.eventb.core.event name="var=" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="shareFile">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="shareFile"/>
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="file"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="user1"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="user2"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd1" org.eventb.core.predicate="file ∈ FILES"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd2" org.eventb.core.predicate="user1 ∈ USERS"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd3" org.eventb.core.predicate="user2 ∈ USERS"/>
+<org.eventb.core.guard name="8" org.eventb.core.label="grd9" org.eventb.core.predicate="file ∈ dom(fileSize) ∧ file ∈ dom(fileOwner) ∧ file ∈ dom(fileVersion)"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd4" org.eventb.core.predicate="user1 ∈ dom(registeredUserEMails) ∧ user1 ∈ dom(registeredUserUTypes)"/>
+<org.eventb.core.guard name="/" org.eventb.core.label="grd5" org.eventb.core.predicate="user2 ∈ dom(registeredUserEMails) ∧ user2 ∈ dom(registeredUserUTypes)"/>
+<org.eventb.core.guard name="0" org.eventb.core.comment="verificar se o user1 tem acesso ao ficheiro" org.eventb.core.label="grd6" org.eventb.core.predicate="file ↦ user1 ∈ fileSharing"/>
+<org.eventb.core.guard name="1" org.eventb.core.comment="verificar se o user2 ainda nao tem acesso ao ficheiro" org.eventb.core.label="grd7" org.eventb.core.predicate="file ↦ user2 ∉ fileSharing"/>
+<org.eventb.core.action name="2" org.eventb.core.assignment="fileSharing ≔ fileSharing ∪ {file ↦ user2}" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="5" org.eventb.core.label="grd8" org.eventb.core.predicate="file↦SECURE ∈ fileModes ⇒ user2 ↦ PREMIUM ∈ registeredUserUTypes"/>
+<org.eventb.core.action name="9" org.eventb.core.assignment="localFiles ≔ localFiles ∪ {{file ↦ user2} ↦ fileVersion(file)}" org.eventb.core.label="act2"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="var&gt;" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="removeShare">
+<org.eventb.core.event name="var&gt;" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="removeShare">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="removeShare"/>
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="file"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="user1"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="user2"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="file ∈ FILES"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="user1 ∈ USERS"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="user2 ∈ USERS"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="user1 ∈ dom(registeredUserEMails) ∧ user1 ∈ dom(registeredUserUTypes)"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd5" org.eventb.core.predicate="user2 ∈ dom(registeredUserEMails) ∧ user2 ∈ dom(registeredUserUTypes)"/>
+<org.eventb.core.guard name="/" org.eventb.core.label="grd6" org.eventb.core.predicate="file ↦ user1 ∈ fileSharing"/>
+<org.eventb.core.guard name="0" org.eventb.core.label="grd7" org.eventb.core.predicate="file ↦ user2 ∈ fileSharing"/>
+<org.eventb.core.action name="2" org.eventb.core.assignment="fileSharing ≔ fileSharing ∖ {file ↦ user2}" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="3" org.eventb.core.label="grd8" org.eventb.core.predicate="file ↦ user2 ∉ fileOwner"/>
+<org.eventb.core.guard name="5" org.eventb.core.comment="verifica R48" org.eventb.core.label="grd9" org.eventb.core.predicate="file ↦ TRUE ∈ fileBMode ⇒ (∃u ·(u ∈ USERS ∧ user2 ≠ u ∧ u ↦ PREMIUM ∈ registeredUserUTypes ∧ file ↦ u ∈ fileSharing ))"/>
+<org.eventb.core.action name="6" org.eventb.core.assignment="localFiles ≔ localFiles ∖ {{file ↦ user2} ↦ localFiles({file ↦ user2})}" org.eventb.core.label="act3"/>
+<org.eventb.core.guard name="8" org.eventb.core.label="grd11" org.eventb.core.predicate="{file ↦ user2} ∈ dom(localFiles)"/>
+<org.eventb.core.guard name="7" org.eventb.core.label="grd10" org.eventb.core.predicate="localFiles({file ↦ user2}) ∈ ℕ1 "/>
 </org.eventb.core.event>
 <org.eventb.core.event name="var?" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="changeSharingMode">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="changeSharingMode"/>
@@ -117,5 +156,7 @@
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="turnOnBU"/>
 </org.eventb.core.event>
 <org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="varC" org.eventb.core.comment="repositorios locais organizados por ficheiros" org.eventb.core.identifier="localFiles"/>
-<org.eventb.core.invariant name="varD" org.eventb.core.label="inv1" org.eventb.core.predicate="localFiles ∈ FILES ↔ (USERS ⇸ ℕ1)"/>
+<org.eventb.core.invariant name="varD" org.eventb.core.label="inv1" org.eventb.core.predicate="localFiles ∈ (FILES ↔ USERS) ⇸ ℕ1"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="varE" org.eventb.core.identifier="domainLF"/>
+<org.eventb.core.invariant name="varF" org.eventb.core.label="inv2" org.eventb.core.predicate="domainLF ∈ {FILES ↔ USERS}"/>
 </org.eventb.core.machineFile>

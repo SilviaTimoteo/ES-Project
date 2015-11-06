@@ -24,6 +24,7 @@
 <org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
 <org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
 <org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(ℙ(FILES×USERS)×ℤ))∈(FILES ↔ USERS) ⇸ ℕ1"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(UTYPES,{BASIC},{PREMIUM})"/>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="partition(MODES,{REGULAR},{SECURE},{READONLY})"/>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="UTYPES={BASIC,PREMIUM}"/>
@@ -32,7 +33,6 @@
 <org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬REGULAR=SECURE"/>
 <org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬SECURE=READONLY"/>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="MODES={REGULAR,SECURE,READONLY}"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(FILES×ℙ(USERS×ℤ)))∈FILES ↔ (USERS ⇸ ℕ1)"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
@@ -139,104 +139,12 @@
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="removeFile/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19" org.eventb.core.prSets="FILES,MODES,UEMAILS,USERS,UTYPES">
+<org.eventb.core.prProof name="removeFile/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0" org.eventb.core.prSets="FILES,USERS">
 <org.eventb.core.lang name="L"/>
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(UTYPES,{BASIC},{PREMIUM}))" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p12" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p20,p21"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p20,p21"/>
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(MODES,{REGULAR},{SECURE},{READONLY}))" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p13" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p22,p23,p24,p25"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p22,p23,p24,p25"/>
-<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p14" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p26,p27,p28"/>
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p29"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p30"/>
-<org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p17" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p31"/>
-<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p32"/>
-<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p33"/>
-<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p31" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p34"/>
-<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p6,p10,p15,p1,p9,p4,p11,p18,p5,p2,p8,p16,p3,p7,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28,p34">
-<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
-</org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-</org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-</org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-</org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
-</org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
-</org.eventb.core.prRule>
-<org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
-<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
-<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
-<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
-<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
-<org.eventb.core.prIdent name="archFSize" org.eventb.core.type="ℙ(FILES×ℤ)"/>
-<org.eventb.core.prIdent name="archFVersion" org.eventb.core.type="ℙ(FILES×ℤ)"/>
-<org.eventb.core.prIdent name="file" org.eventb.core.type="FILES"/>
-<org.eventb.core.prIdent name="fileBMode" org.eventb.core.type="ℙ(FILES×BOOL)"/>
-<org.eventb.core.prIdent name="fileBackups" org.eventb.core.type="ℙ(FILES×ℤ)"/>
-<org.eventb.core.prIdent name="fileModes" org.eventb.core.type="ℙ(FILES×MODES)"/>
-<org.eventb.core.prIdent name="fileOwner" org.eventb.core.type="ℙ(FILES×USERS)"/>
-<org.eventb.core.prIdent name="fileSharing" org.eventb.core.type="ℙ(FILES×USERS)"/>
-<org.eventb.core.prIdent name="fileSize" org.eventb.core.type="ℙ(FILES×ℤ)"/>
-<org.eventb.core.prIdent name="fileVersion" org.eventb.core.type="ℙ(FILES×ℤ)"/>
-<org.eventb.core.prIdent name="localFiles" org.eventb.core.type="ℙ(FILES×ℙ(USERS×ℤ))"/>
-<org.eventb.core.prIdent name="registeredUserEMails" org.eventb.core.type="ℙ(USERS×UEMAILS)"/>
-<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
-<org.eventb.core.prIdent name="user" org.eventb.core.type="USERS"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="fileOwner∈FILES ⇸ USERS"/>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="fileVersion∈FILES ⇸ ℕ1"/>
-<org.eventb.core.prPred name="p24" org.eventb.core.predicate="¬REGULAR=READONLY"/>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="registeredUserUTypes∈USERS ⇸ UTYPES"/>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="file ↦ user∈fileSharing"/>
-<org.eventb.core.prPred name="p30" org.eventb.core.predicate="archFAccess∈FILES ↔ USERS">
-<org.eventb.core.prIdent name="archFAccess" org.eventb.core.type="ℙ(FILES×USERS)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="fileBMode∈FILES ⇸ BOOL"/>
-<org.eventb.core.prPred name="p10" org.eventb.core.predicate="registeredUserEMails∈USERS ⤔ UEMAILS"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="{file} ⩤ localFiles∈FILES ↔ (USERS ⇸ ℕ1)"/>
-<org.eventb.core.prPred name="p12" org.eventb.core.predicate="partition(UTYPES,{BASIC},{PREMIUM})"/>
-<org.eventb.core.prPred name="p14" org.eventb.core.predicate="file∈dom(fileSize)∧file∈dom(fileOwner)∧file∈dom(fileVersion)"/>
-<org.eventb.core.prPred name="p18" org.eventb.core.predicate="ran(fileVersion)⊆ℕ1"/>
-<org.eventb.core.prPred name="p27" org.eventb.core.predicate="file∈dom(fileOwner)"/>
-<org.eventb.core.prPred name="p21" org.eventb.core.predicate="¬BASIC=PREMIUM"/>
-<org.eventb.core.prPred name="p34" org.eventb.core.predicate="∀f⦂FILES·f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)"/>
-<org.eventb.core.prPred name="p33" org.eventb.core.predicate="user∈USERS"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="archFSize∈FILES ⇸ ℕ"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="localFiles∈FILES ↔ (USERS ⇸ ℕ1)"/>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="fileModes∈FILES ⇸ MODES"/>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="archFVersion∈FILES ⇸ ℕ1"/>
-<org.eventb.core.prPred name="p28" org.eventb.core.predicate="file∈dom(fileVersion)"/>
-<org.eventb.core.prPred name="p32" org.eventb.core.predicate="file∈FILES"/>
-<org.eventb.core.prPred name="p11" org.eventb.core.predicate="fileBackups∈FILES ↔ ℕ1"/>
-<org.eventb.core.prPred name="p22" org.eventb.core.predicate="MODES={REGULAR,SECURE,READONLY}"/>
-<org.eventb.core.prPred name="p13" org.eventb.core.predicate="partition(MODES,{REGULAR},{SECURE},{READONLY})"/>
-<org.eventb.core.prPred name="p20" org.eventb.core.predicate="UTYPES={BASIC,PREMIUM}"/>
-<org.eventb.core.prPred name="p29" org.eventb.core.predicate="fileSharing∈FILES ↔ USERS"/>
-<org.eventb.core.prPred name="p15" org.eventb.core.predicate="fileSize∈FILES ⇸ ℕ"/>
-<org.eventb.core.prPred name="p31" org.eventb.core.predicate="∀f⦂FILES·⊤∧f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·⊤∧u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)"/>
-<org.eventb.core.prPred name="p16" org.eventb.core.predicate="∀f⦂FILES,u⦂USERS·f ↦ u∈fileSharing∧f ↦ SECURE∈fileModes⇒u ↦ PREMIUM∈registeredUserUTypes"/>
-<org.eventb.core.prPred name="p17" org.eventb.core.predicate="∀f⦂FILES·f∈FILES∧f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·u∈USERS∧u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)"/>
-<org.eventb.core.prPred name="p26" org.eventb.core.predicate="file∈dom(fileSize)"/>
-<org.eventb.core.prPred name="p19" org.eventb.core.predicate="file ↦ READONLY∈fileModes⇒file ↦ user∈fileOwner"/>
-<org.eventb.core.prPred name="p23" org.eventb.core.predicate="¬REGULAR=SECURE"/>
-<org.eventb.core.prPred name="p25" org.eventb.core.predicate="¬SECURE=READONLY"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0"/>
+<org.eventb.core.prIdent name="localFiles" org.eventb.core.type="ℙ(ℙ(FILES×USERS)×ℤ)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="localFiles∈(FILES ↔ USERS) ⇸ ℕ1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="uploadFile/grd9/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="FILES,USERS">
 <org.eventb.core.lang name="L"/>
@@ -915,7 +823,6 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀f⦂FILES·f∈FILES∧f∈dom(∅ ⦂ ℙ(FILES×ℙ(USERS×ℤ)))⇒dom((∅ ⦂ ℙ(FILES×ℙ(USERS×ℤ)))(f))⊆USERS"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(UTYPES,{BASIC},{PREMIUM})">
 <org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
 <org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
@@ -938,6 +845,7 @@
 <org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
 <org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
 </org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀f⦂FILES·f∈FILES∧f∈dom(∅ ⦂ ℙ(FILES×ℤ))∧f∈dom(∅ ⦂ ℙ(FILES×USERS))∧f∈dom(∅ ⦂ ℙ(FILES×ℤ))⇒f∈dom(∅ ⦂ ℙ(FILES×ℙ(USERS×ℤ)))"/>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬BASIC=PREMIUM">
 <org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
 <org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
@@ -963,33 +871,175 @@
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="addFile/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="FILES,USERS">
+<org.eventb.core.prProof name="addFile/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="f" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20" org.eventb.core.prSets="FILES,MODES,UEMAILS,USERS,UTYPES">
 <org.eventb.core.lang name="L"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(UTYPES,{BASIC},{PREMIUM}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p2,p3"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p2,p3"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p12" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p21,p22"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p21,p22"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(MODES,{REGULAR},{SECURE},{READONLY}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p5,p6,p7,p8"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p5,p6,p7,p8"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p13" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p23,p24,p25,p26"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p23,p24,p25,p26"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p9" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p10,p11"/>
-<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p12" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p13,p14,p15"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p8" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p27,p28"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p18" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p29,p30,p31"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p24">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p38">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p32"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p33"/>
+<org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p16" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p34"/>
+<org.eventb.core.prHypAction name="REWRITE3" org.eventb.core.prHidden="p19" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p35"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p36"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p37"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p38" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p41">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p34" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p39"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p35" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p40"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees f)" org.eventb.core.prGoal="p41" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p42">
+<org.eventb.core.prIdent name="f" org.eventb.core.type="FILES"/>
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p42" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p46" org.eventb.core.prHyps="p43,p44,p45">
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p46" org.eventb.core.prHyps="p6,p10,p14,p1,p9,p4,p11,p17,p5,p2,p7,p15,p3,p20,p21,p22,p23,p24,p25,p26,p27,p28,p29,p30,p31,p39,p40,p43,p44,p45">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="archFSize" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="archFVersion" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="file" org.eventb.core.type="FILES"/>
+<org.eventb.core.prIdent name="fileBMode" org.eventb.core.type="ℙ(FILES×BOOL)"/>
+<org.eventb.core.prIdent name="fileBackups" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="fileModes" org.eventb.core.type="ℙ(FILES×MODES)"/>
+<org.eventb.core.prIdent name="fileOwner" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="fileSharing" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="fileSize" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="fileVersion" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="localFiles" org.eventb.core.type="ℙ(FILES×ℙ(USERS×ℤ))"/>
+<org.eventb.core.prIdent name="owner" org.eventb.core.type="USERS"/>
+<org.eventb.core.prIdent name="registeredUserEMails" org.eventb.core.type="ℙ(USERS×UEMAILS)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+<org.eventb.core.prIdent name="size" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="fileOwner∈FILES ⇸ USERS"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="fileVersion∈FILES ⇸ ℕ1"/>
+<org.eventb.core.prPred name="p45" org.eventb.core.predicate="f∈dom(fileVersion{file ↦ 1})">
+<org.eventb.core.prIdent name="f" org.eventb.core.type="FILES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p25" org.eventb.core.predicate="¬REGULAR=READONLY"/>
+<org.eventb.core.prPred name="p42" org.eventb.core.predicate="f∈dom(fileSize{file ↦ size})∧f∈dom(fileOwner{file ↦ owner})∧f∈dom(fileVersion{file ↦ 1})⇒f∈dom(localFiles∪{file ↦ {owner ↦ 1}})">
+<org.eventb.core.prIdent name="f" org.eventb.core.type="FILES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="registeredUserUTypes∈USERS ⇸ UTYPES"/>
+<org.eventb.core.prPred name="p43" org.eventb.core.predicate="f∈dom(fileSize{file ↦ size})">
+<org.eventb.core.prIdent name="f" org.eventb.core.type="FILES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p40" org.eventb.core.predicate="∀f⦂FILES·f∈dom(fileSize)∧f∈dom(fileOwner)∧f∈dom(fileVersion)⇒f∈dom(localFiles)"/>
+<org.eventb.core.prPred name="p33" org.eventb.core.predicate="archFAccess∈FILES ↔ USERS">
+<org.eventb.core.prIdent name="archFAccess" org.eventb.core.type="ℙ(FILES×USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="fileBMode∈FILES ⇸ BOOL"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="registeredUserEMails∈USERS ⤔ UEMAILS"/>
+<org.eventb.core.prPred name="p29" org.eventb.core.predicate="¬file∈dom(fileSize)"/>
+<org.eventb.core.prPred name="p31" org.eventb.core.predicate="¬file∈dom(fileVersion)"/>
+<org.eventb.core.prPred name="p38" org.eventb.core.predicate="∀f⦂FILES·⊤∧f∈dom(fileSize{file ↦ size})∧f∈dom(fileOwner{file ↦ owner})∧f∈dom(fileVersion{file ↦ 1})⇒f∈dom(localFiles∪{file ↦ {owner ↦ 1}})"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="partition(UTYPES,{BASIC},{PREMIUM})"/>
+<org.eventb.core.prPred name="p35" org.eventb.core.predicate="∀f⦂FILES·⊤∧f∈dom(fileSize)∧f∈dom(fileOwner)∧f∈dom(fileVersion)⇒f∈dom(localFiles)"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="ran(fileVersion)⊆ℕ1"/>
+<org.eventb.core.prPred name="p37" org.eventb.core.predicate="owner∈USERS"/>
+<org.eventb.core.prPred name="p30" org.eventb.core.predicate="¬file∈dom(fileOwner)"/>
+<org.eventb.core.prPred name="p44" org.eventb.core.predicate="f∈dom(fileOwner{file ↦ owner})">
+<org.eventb.core.prIdent name="f" org.eventb.core.type="FILES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="∀f⦂FILES·f∈FILES∧f∈dom(fileSize)∧f∈dom(fileOwner)∧f∈dom(fileVersion)⇒f∈dom(localFiles)"/>
+<org.eventb.core.prPred name="p22" org.eventb.core.predicate="¬BASIC=PREMIUM"/>
+<org.eventb.core.prPred name="p39" org.eventb.core.predicate="∀f⦂FILES·f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)"/>
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="size∈ℕ"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="archFSize∈FILES ⇸ ℕ"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="localFiles∈FILES ↔ (USERS ⇸ ℕ1)"/>
+<org.eventb.core.prPred name="p41" org.eventb.core.predicate="∀f⦂FILES·f∈dom(fileSize{file ↦ size})∧f∈dom(fileOwner{file ↦ owner})∧f∈dom(fileVersion{file ↦ 1})⇒f∈dom(localFiles∪{file ↦ {owner ↦ 1}})"/>
+<org.eventb.core.prPred name="p28" org.eventb.core.predicate="owner∈dom(registeredUserUTypes)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="fileModes∈FILES ⇸ MODES"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="archFVersion∈FILES ⇸ ℕ1"/>
+<org.eventb.core.prPred name="p46" org.eventb.core.predicate="f∈dom(localFiles∪{file ↦ {owner ↦ 1}})">
+<org.eventb.core.prIdent name="f" org.eventb.core.type="FILES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="owner∈dom(registeredUserEMails)∧owner∈dom(registeredUserUTypes)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀f⦂FILES·f∈FILES∧f∈dom(fileSize{file ↦ size})∧f∈dom(fileOwner{file ↦ owner})∧f∈dom(fileVersion{file ↦ 1})⇒f∈dom(localFiles∪{file ↦ {owner ↦ 1}})"/>
+<org.eventb.core.prPred name="p36" org.eventb.core.predicate="file∈FILES"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="fileBackups∈FILES ↔ ℕ1"/>
+<org.eventb.core.prPred name="p23" org.eventb.core.predicate="MODES={REGULAR,SECURE,READONLY}"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="partition(MODES,{REGULAR},{SECURE},{READONLY})"/>
+<org.eventb.core.prPred name="p21" org.eventb.core.predicate="UTYPES={BASIC,PREMIUM}"/>
+<org.eventb.core.prPred name="p32" org.eventb.core.predicate="fileSharing∈FILES ↔ USERS"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="fileSize∈FILES ⇸ ℕ"/>
+<org.eventb.core.prPred name="p34" org.eventb.core.predicate="∀f⦂FILES·⊤∧f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·⊤∧u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="∀f⦂FILES,u⦂USERS·f ↦ u∈fileSharing∧f ↦ SECURE∈fileModes⇒u ↦ PREMIUM∈registeredUserUTypes"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="∀f⦂FILES·f∈FILES∧f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·u∈USERS∧u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)"/>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="file∉dom(fileSize)∧file∉dom(fileOwner)∧file∉dom(fileVersion)"/>
+<org.eventb.core.prPred name="p27" org.eventb.core.predicate="owner∈dom(registeredUserEMails)"/>
+<org.eventb.core.prPred name="p24" org.eventb.core.predicate="¬REGULAR=SECURE"/>
+<org.eventb.core.prPred name="p26" org.eventb.core.predicate="¬SECURE=READONLY"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="removeFile/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="FILES,USERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(UTYPES,{BASIC},{PREMIUM}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p3,p4"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p3,p4"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(MODES,{REGULAR},{SECURE},{READONLY}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p5" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p6,p7,p8,p9"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p6,p7,p8,p9"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p15">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p10"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p11" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p12,p13,p14"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p16"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p17"/>
 <org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p18" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p19"/>
-<org.eventb.core.prHypAction name="REWRITE3" org.eventb.core.prHidden="p20" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p21"/>
-<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p22"/>
-<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p23"/>
-<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p24" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p26">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p19" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p25"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p21"/>
-<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p26" org.eventb.core.prHyps=""/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p20"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p21"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p19" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p22"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with domainLF=FILES ↔ USERS" org.eventb.core.prGoal="p15" org.eventb.core.prHyps="p10">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p23">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p23" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p24">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p24" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -1002,187 +1052,41 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
-<org.eventb.core.prIdent name="file" org.eventb.core.type="FILES"/>
-<org.eventb.core.prIdent name="localFiles" org.eventb.core.type="ℙ(FILES×ℙ(USERS×ℤ))"/>
-<org.eventb.core.prIdent name="owner" org.eventb.core.type="USERS"/>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬REGULAR=READONLY">
+<org.eventb.core.prIdent name="domainLF" org.eventb.core.type="ℙ(ℙ(FILES×USERS))"/>
+<org.eventb.core.prIdent name="localFiles" org.eventb.core.type="ℙ(ℙ(FILES×USERS)×ℤ)"/>
+<org.eventb.core.prPred name="p23" org.eventb.core.predicate="(FILES ↔ USERS)∪dom(localFiles)=FILES ↔ USERS"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="domainLF∪dom(localFiles)∈{FILES ↔ USERS}"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬REGULAR=READONLY">
 <org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
 <org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
 <org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
 </org.eventb.core.prPred>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="domainLF∪dom(localFiles)=FILES ↔ USERS"/>
 <org.eventb.core.prPred name="p17" org.eventb.core.predicate="archFAccess∈FILES ↔ USERS">
 <org.eventb.core.prIdent name="archFAccess" org.eventb.core.type="ℙ(FILES×USERS)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p13" org.eventb.core.predicate="¬file∈dom(fileSize)">
-<org.eventb.core.prIdent name="fileSize" org.eventb.core.type="ℙ(FILES×ℤ)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬file∈dom(fileVersion)">
-<org.eventb.core.prIdent name="fileVersion" org.eventb.core.type="ℙ(FILES×ℤ)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(UTYPES,{BASIC},{PREMIUM})">
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="partition(UTYPES,{BASIC},{PREMIUM})">
 <org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
 <org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
 <org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀f⦂FILES·f∈FILES∧f∈dom(localFiles∪{file ↦ {owner ↦ 1}})⇒dom((localFiles∪{file ↦ {owner ↦ 1}})(f))⊆USERS"/>
-<org.eventb.core.prPred name="p23" org.eventb.core.predicate="owner∈USERS"/>
-<org.eventb.core.prPred name="p14" org.eventb.core.predicate="¬file∈dom(fileOwner)">
-<org.eventb.core.prIdent name="fileOwner" org.eventb.core.type="ℙ(FILES×USERS)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬BASIC=PREMIUM">
-<org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
-<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
-<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p25" org.eventb.core.predicate="∀f⦂FILES·f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)">
-<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
-<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
-<org.eventb.core.prIdent name="fileBMode" org.eventb.core.type="ℙ(FILES×BOOL)"/>
-<org.eventb.core.prIdent name="fileSharing" org.eventb.core.type="ℙ(FILES×USERS)"/>
-<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p26" org.eventb.core.predicate="⊤"/>
-<org.eventb.core.prPred name="p11" org.eventb.core.predicate="owner∈dom(registeredUserUTypes)">
-<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
-<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="owner∈dom(registeredUserEMails)∧owner∈dom(registeredUserUTypes)">
-<org.eventb.core.prIdent name="UEMAILS" org.eventb.core.type="ℙ(UEMAILS)"/>
-<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
-<org.eventb.core.prIdent name="registeredUserEMails" org.eventb.core.type="ℙ(USERS×UEMAILS)"/>
-<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p22" org.eventb.core.predicate="file∈FILES"/>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="MODES={REGULAR,SECURE,READONLY}">
-<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
-<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
-<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
-<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="partition(MODES,{REGULAR},{SECURE},{READONLY})">
-<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
-<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
-<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
-<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="UTYPES={BASIC,PREMIUM}">
-<org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
-<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
-<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p16" org.eventb.core.predicate="fileSharing∈FILES ↔ USERS">
-<org.eventb.core.prIdent name="fileSharing" org.eventb.core.type="ℙ(FILES×USERS)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p19" org.eventb.core.predicate="∀f⦂FILES·⊤∧f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·⊤∧u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)">
-<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
-<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
-<org.eventb.core.prIdent name="fileBMode" org.eventb.core.type="ℙ(FILES×BOOL)"/>
-<org.eventb.core.prIdent name="fileSharing" org.eventb.core.type="ℙ(FILES×USERS)"/>
-<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p20" org.eventb.core.predicate="∀f⦂FILES·f∈FILES∧f∈dom(localFiles)⇒dom(localFiles(f))⊆USERS"/>
-<org.eventb.core.prPred name="p24" org.eventb.core.predicate="∀f⦂FILES·⊤∧f∈dom(localFiles∪{file ↦ {owner ↦ 1}})⇒⊤"/>
-<org.eventb.core.prPred name="p18" org.eventb.core.predicate="∀f⦂FILES·f∈FILES∧f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·u∈USERS∧u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)">
-<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
-<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
-<org.eventb.core.prIdent name="fileBMode" org.eventb.core.type="ℙ(FILES×BOOL)"/>
-<org.eventb.core.prIdent name="fileSharing" org.eventb.core.type="ℙ(FILES×USERS)"/>
-<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p12" org.eventb.core.predicate="file∉dom(fileSize)∧file∉dom(fileOwner)∧file∉dom(fileVersion)">
-<org.eventb.core.prIdent name="fileOwner" org.eventb.core.type="ℙ(FILES×USERS)"/>
-<org.eventb.core.prIdent name="fileSize" org.eventb.core.type="ℙ(FILES×ℤ)"/>
-<org.eventb.core.prIdent name="fileVersion" org.eventb.core.type="ℙ(FILES×ℤ)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p10" org.eventb.core.predicate="owner∈dom(registeredUserEMails)">
-<org.eventb.core.prIdent name="UEMAILS" org.eventb.core.type="ℙ(UEMAILS)"/>
-<org.eventb.core.prIdent name="registeredUserEMails" org.eventb.core.type="ℙ(USERS×UEMAILS)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p21" org.eventb.core.predicate="∀f⦂FILES·⊤∧f∈dom(localFiles)⇒⊤"/>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬REGULAR=SECURE">
-<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
-<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
-<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬SECURE=READONLY">
-<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
-<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
-<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-</org.eventb.core.prProof>
-<org.eventb.core.prProof name="removeFile/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="FILES,USERS">
-<org.eventb.core.lang name="L"/>
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(UTYPES,{BASIC},{PREMIUM}))" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p2,p3"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p2,p3"/>
-<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(MODES,{REGULAR},{SECURE},{READONLY}))" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p5,p6,p7,p8"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p5,p6,p7,p8"/>
-<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p13">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p9" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p10,p11,p12"/>
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p22">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p14"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p15"/>
-<org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p16" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p17"/>
-<org.eventb.core.prHypAction name="REWRITE3" org.eventb.core.prHidden="p18" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p19"/>
-<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p20"/>
-<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p21"/>
-<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p22" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p24">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p17" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p23"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p19"/>
-<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p24" org.eventb.core.prHyps=""/>
-</org.eventb.core.prAnte>
-</org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-</org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-</org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
-</org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
-</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="domainLF∈{FILES ↔ USERS}"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="file∈dom(fileSize)∧file∈dom(fileOwner)∧file∈dom(fileVersion)">
 <org.eventb.core.prIdent name="file" org.eventb.core.type="FILES"/>
-<org.eventb.core.prIdent name="localFiles" org.eventb.core.type="ℙ(FILES×ℙ(USERS×ℤ))"/>
-<org.eventb.core.prPred name="p13" org.eventb.core.predicate="∀f⦂FILES·f∈FILES∧f∈dom(localFiles) ∖ {file}⇒dom(({file} ⩤ localFiles)(f))⊆USERS"/>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬REGULAR=READONLY">
-<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
-<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
-<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p15" org.eventb.core.predicate="archFAccess∈FILES ↔ USERS">
-<org.eventb.core.prIdent name="archFAccess" org.eventb.core.type="ℙ(FILES×USERS)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀f⦂FILES·f∈FILES∧f∈dom({file} ⩤ localFiles)⇒dom(({file} ⩤ localFiles)(f))⊆USERS"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(UTYPES,{BASIC},{PREMIUM})">
-<org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
-<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
-<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="file∈dom(fileSize)∧file∈dom(fileOwner)∧file∈dom(fileVersion)">
 <org.eventb.core.prIdent name="fileOwner" org.eventb.core.type="ℙ(FILES×USERS)"/>
 <org.eventb.core.prIdent name="fileSize" org.eventb.core.type="ℙ(FILES×ℤ)"/>
 <org.eventb.core.prIdent name="fileVersion" org.eventb.core.type="ℙ(FILES×ℤ)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p11" org.eventb.core.predicate="file∈dom(fileOwner)">
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="file∈dom(fileOwner)">
+<org.eventb.core.prIdent name="file" org.eventb.core.type="FILES"/>
 <org.eventb.core.prIdent name="fileOwner" org.eventb.core.type="ℙ(FILES×USERS)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬BASIC=PREMIUM">
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬BASIC=PREMIUM">
 <org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
 <org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
 <org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p23" org.eventb.core.predicate="∀f⦂FILES·f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)">
+<org.eventb.core.prPred name="p22" org.eventb.core.predicate="∀f⦂FILES·f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)">
 <org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
 <org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
 <org.eventb.core.prIdent name="fileBMode" org.eventb.core.type="ℙ(FILES×BOOL)"/>
@@ -1193,63 +1097,1147 @@
 <org.eventb.core.prIdent name="user" org.eventb.core.type="USERS"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p24" org.eventb.core.predicate="⊤"/>
-<org.eventb.core.prPred name="p22" org.eventb.core.predicate="∀f⦂FILES·⊤∧f∈dom(localFiles) ∖ {file}⇒⊤"/>
-<org.eventb.core.prPred name="p12" org.eventb.core.predicate="file∈dom(fileVersion)">
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="file∈dom(fileVersion)">
+<org.eventb.core.prIdent name="file" org.eventb.core.type="FILES"/>
 <org.eventb.core.prIdent name="fileVersion" org.eventb.core.type="ℙ(FILES×ℤ)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p20" org.eventb.core.predicate="file∈FILES"/>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="MODES={REGULAR,SECURE,READONLY}">
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="file∈FILES">
+<org.eventb.core.prIdent name="file" org.eventb.core.type="FILES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="MODES={REGULAR,SECURE,READONLY}">
 <org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
 <org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
 <org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
 <org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="partition(MODES,{REGULAR},{SECURE},{READONLY})">
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="partition(MODES,{REGULAR},{SECURE},{READONLY})">
 <org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
 <org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
 <org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
 <org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="UTYPES={BASIC,PREMIUM}">
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="UTYPES={BASIC,PREMIUM}">
 <org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
 <org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
 <org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p14" org.eventb.core.predicate="fileSharing∈FILES ↔ USERS">
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="fileSharing∈FILES ↔ USERS">
 <org.eventb.core.prIdent name="fileSharing" org.eventb.core.type="ℙ(FILES×USERS)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p17" org.eventb.core.predicate="∀f⦂FILES·⊤∧f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·⊤∧u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)">
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="domainLF=FILES ↔ USERS"/>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="∀f⦂FILES·⊤∧f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·⊤∧u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)">
 <org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
 <org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
 <org.eventb.core.prIdent name="fileBMode" org.eventb.core.type="ℙ(FILES×BOOL)"/>
 <org.eventb.core.prIdent name="fileSharing" org.eventb.core.type="ℙ(FILES×USERS)"/>
 <org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p18" org.eventb.core.predicate="∀f⦂FILES·f∈FILES∧f∈dom(localFiles)⇒dom(localFiles(f))⊆USERS"/>
-<org.eventb.core.prPred name="p16" org.eventb.core.predicate="∀f⦂FILES·f∈FILES∧f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·u∈USERS∧u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)">
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="∀f⦂FILES·f∈FILES∧f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·u∈USERS∧u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)">
 <org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
 <org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
 <org.eventb.core.prIdent name="fileBMode" org.eventb.core.type="ℙ(FILES×BOOL)"/>
 <org.eventb.core.prIdent name="fileSharing" org.eventb.core.type="ℙ(FILES×USERS)"/>
 <org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p10" org.eventb.core.predicate="file∈dom(fileSize)">
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="file∈dom(fileSize)">
+<org.eventb.core.prIdent name="file" org.eventb.core.type="FILES"/>
 <org.eventb.core.prIdent name="fileSize" org.eventb.core.type="ℙ(FILES×ℤ)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p19" org.eventb.core.predicate="∀f⦂FILES·⊤∧f∈dom(localFiles)⇒⊤"/>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬REGULAR=SECURE">
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬REGULAR=SECURE">
 <org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
 <org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
 <org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬SECURE=READONLY">
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬SECURE=READONLY">
 <org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
 <org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
 <org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="uploadFile/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="f" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6" org.eventb.core.prSets="FILES,MODES,USERS,UTYPES">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(UTYPES,{BASIC},{PREMIUM}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p7,p8"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p7,p8"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(MODES,{REGULAR},{SECURE},{READONLY}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p9,p10,p11,p12"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p9,p10,p11,p12"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="p4" org.eventb.core.prInfHyps="p13"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p13" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p14,p15"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p23">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p16"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p17"/>
+<org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p18" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p19"/>
+<org.eventb.core.prHypAction name="REWRITE3" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p20"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p21"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p22"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p23" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p26">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p19" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p24"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p20" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p25"/>
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees f)" org.eventb.core.prGoal="p26" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p27">
+<org.eventb.core.prIdent name="f" org.eventb.core.type="FILES"/>
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p27" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p31" org.eventb.core.prHyps="p28,p29,p30">
+<org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p31" org.eventb.core.prHyps="p4,p5,p7,p8,p9,p10,p11,p12,p14,p15,p25,p28,p29,p30">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="file" org.eventb.core.type="FILES"/>
+<org.eventb.core.prIdent name="fileModes" org.eventb.core.type="ℙ(FILES×MODES)"/>
+<org.eventb.core.prIdent name="fileOwner" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="fileSize" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="fileVersion" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="localFiles" org.eventb.core.type="ℙ(FILES×ℙ(USERS×ℤ))"/>
+<org.eventb.core.prIdent name="user" org.eventb.core.type="USERS"/>
+<org.eventb.core.prPred name="p28" org.eventb.core.predicate="f∈dom(fileSize)">
+<org.eventb.core.prIdent name="f" org.eventb.core.type="FILES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p30" org.eventb.core.predicate="f∈dom(fileVersion{file ↦ fileVersion(file)+1})">
+<org.eventb.core.prIdent name="f" org.eventb.core.type="FILES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p26" org.eventb.core.predicate="∀f⦂FILES·f∈dom(fileSize)∧f∈dom(fileOwner)∧f∈dom(fileVersion{file ↦ fileVersion(file)+1})⇒f∈dom(localFiles)"/>
+<org.eventb.core.prPred name="p27" org.eventb.core.predicate="f∈dom(fileSize)∧f∈dom(fileOwner)∧f∈dom(fileVersion{file ↦ fileVersion(file)+1})⇒f∈dom(localFiles)">
+<org.eventb.core.prIdent name="f" org.eventb.core.type="FILES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="¬REGULAR=READONLY"/>
+<org.eventb.core.prPred name="p25" org.eventb.core.predicate="∀f⦂FILES·f∈dom(fileSize)∧f∈dom(fileOwner)∧f∈dom(fileVersion)⇒f∈dom(localFiles)"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="archFAccess∈FILES ↔ USERS">
+<org.eventb.core.prIdent name="archFAccess" org.eventb.core.type="ℙ(FILES×USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀f⦂FILES·f∈FILES∧f∈dom(fileSize)∧f∈dom(fileOwner)∧f∈dom(fileVersion{file ↦ fileVersion(file)+1})⇒f∈dom(localFiles)"/>
+<org.eventb.core.prPred name="p29" org.eventb.core.predicate="f∈dom(fileOwner)">
+<org.eventb.core.prIdent name="f" org.eventb.core.type="FILES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(UTYPES,{BASIC},{PREMIUM})"/>
+<org.eventb.core.prPred name="p23" org.eventb.core.predicate="∀f⦂FILES·⊤∧f∈dom(fileSize)∧f∈dom(fileOwner)∧f∈dom(fileVersion{file ↦ fileVersion(file)+1})⇒f∈dom(localFiles)"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="file∈dom(fileSize)∧file∈dom(fileOwner)∧file∈dom(fileVersion)"/>
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="∀f⦂FILES·⊤∧f∈dom(fileSize)∧f∈dom(fileOwner)∧f∈dom(fileVersion)⇒f∈dom(localFiles)"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="file∈dom(fileOwner)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀f⦂FILES·f∈FILES∧f∈dom(fileSize)∧f∈dom(fileOwner)∧f∈dom(fileVersion)⇒f∈dom(localFiles)"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬BASIC=PREMIUM"/>
+<org.eventb.core.prPred name="p24" org.eventb.core.predicate="∀f⦂FILES·f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)">
+<org.eventb.core.prIdent name="fileBMode" org.eventb.core.type="ℙ(FILES×BOOL)"/>
+<org.eventb.core.prIdent name="fileSharing" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p31" org.eventb.core.predicate="f∈dom(localFiles)">
+<org.eventb.core.prIdent name="f" org.eventb.core.type="FILES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p22" org.eventb.core.predicate="user∈USERS"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="file∈dom(fileSize)∧file∈dom(fileOwner)∧⊤"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="file∈dom(fileVersion)"/>
+<org.eventb.core.prPred name="p21" org.eventb.core.predicate="file∈FILES"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="MODES={REGULAR,SECURE,READONLY}"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="partition(MODES,{REGULAR},{SECURE},{READONLY})"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="UTYPES={BASIC,PREMIUM}"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="fileSharing∈FILES ↔ USERS">
+<org.eventb.core.prIdent name="fileSharing" org.eventb.core.type="ℙ(FILES×USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="∀f⦂FILES·⊤∧f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·⊤∧u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)">
+<org.eventb.core.prIdent name="fileBMode" org.eventb.core.type="ℙ(FILES×BOOL)"/>
+<org.eventb.core.prIdent name="fileSharing" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="∀f⦂FILES·f∈FILES∧f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·u∈USERS∧u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)">
+<org.eventb.core.prIdent name="fileBMode" org.eventb.core.type="ℙ(FILES×BOOL)"/>
+<org.eventb.core.prIdent name="fileSharing" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="file∈dom(fileSize)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="file ↦ READONLY∈fileModes⇒file ↦ user∈fileOwner"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬REGULAR=SECURE"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬SECURE=READONLY"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL2"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="uploadFile/grd8/THM" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(UTYPES,{BASIC},{PREMIUM}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p0" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p1,p2"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p1,p2"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(MODES,{REGULAR},{SECURE},{READONLY}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p4,p5,p6,p7"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p4,p5,p6,p7"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p8" org.eventb.core.prHyps="p10" org.eventb.core.prInfHyps="p9"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p11" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p12,p13"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p9" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p14,p15"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p16"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p17"/>
+<org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p18" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p19"/>
+<org.eventb.core.prHypAction name="REWRITE3" org.eventb.core.prHidden="p20" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p21"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p22"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p23"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p19" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p24"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p21" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p25"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="user∈dom(registeredUserEMails)">
+<org.eventb.core.prIdent name="UEMAILS" org.eventb.core.type="ℙ(UEMAILS)"/>
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="registeredUserEMails" org.eventb.core.type="ℙ(USERS×UEMAILS)"/>
+<org.eventb.core.prIdent name="user" org.eventb.core.type="USERS"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬REGULAR=READONLY">
+<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="user∈dom(registeredUserUTypes)">
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+<org.eventb.core.prIdent name="user" org.eventb.core.type="USERS"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p25" org.eventb.core.predicate="∀f⦂FILES·f∈dom(fileSize)∧f∈dom(fileOwner)∧f∈dom(fileVersion)⇒f∈dom(localFiles)">
+<org.eventb.core.prIdent name="FILES" org.eventb.core.type="ℙ(FILES)"/>
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="fileOwner" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="fileSize" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="fileVersion" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="localFiles" org.eventb.core.type="ℙ(FILES×ℙ(USERS×ℤ))"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="archFAccess∈FILES ↔ USERS">
+<org.eventb.core.prIdent name="FILES" org.eventb.core.type="ℙ(FILES)"/>
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="archFAccess" org.eventb.core.type="ℙ(FILES×USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(UTYPES,{BASIC},{PREMIUM})">
+<org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="file∈dom(fileSize)∧file∈dom(fileOwner)∧file∈dom(fileVersion)">
+<org.eventb.core.prIdent name="FILES" org.eventb.core.type="ℙ(FILES)"/>
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="file" org.eventb.core.type="FILES"/>
+<org.eventb.core.prIdent name="fileOwner" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="fileSize" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="fileVersion" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p21" org.eventb.core.predicate="∀f⦂FILES·⊤∧f∈dom(fileSize)∧f∈dom(fileOwner)∧f∈dom(fileVersion)⇒f∈dom(localFiles)">
+<org.eventb.core.prIdent name="FILES" org.eventb.core.type="ℙ(FILES)"/>
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="fileOwner" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="fileSize" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="fileVersion" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="localFiles" org.eventb.core.type="ℙ(FILES×ℙ(USERS×ℤ))"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="file∈dom(fileOwner)">
+<org.eventb.core.prIdent name="FILES" org.eventb.core.type="ℙ(FILES)"/>
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="file" org.eventb.core.type="FILES"/>
+<org.eventb.core.prIdent name="fileOwner" org.eventb.core.type="ℙ(FILES×USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬BASIC=PREMIUM">
+<org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="∀f⦂FILES·f∈FILES∧f∈dom(fileSize)∧f∈dom(fileOwner)∧f∈dom(fileVersion)⇒f∈dom(localFiles)">
+<org.eventb.core.prIdent name="FILES" org.eventb.core.type="ℙ(FILES)"/>
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="fileOwner" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="fileSize" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="fileVersion" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="localFiles" org.eventb.core.type="ℙ(FILES×ℙ(USERS×ℤ))"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p24" org.eventb.core.predicate="∀f⦂FILES·f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)">
+<org.eventb.core.prIdent name="FILES" org.eventb.core.type="ℙ(FILES)"/>
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+<org.eventb.core.prIdent name="fileBMode" org.eventb.core.type="ℙ(FILES×BOOL)"/>
+<org.eventb.core.prIdent name="fileSharing" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p23" org.eventb.core.predicate="user∈USERS">
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="user" org.eventb.core.type="USERS"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="file∈dom(fileSize)∧file∈dom(fileOwner)∧⊤">
+<org.eventb.core.prIdent name="FILES" org.eventb.core.type="ℙ(FILES)"/>
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="file" org.eventb.core.type="FILES"/>
+<org.eventb.core.prIdent name="fileOwner" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="fileSize" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="file∈dom(fileVersion)">
+<org.eventb.core.prIdent name="FILES" org.eventb.core.type="ℙ(FILES)"/>
+<org.eventb.core.prIdent name="file" org.eventb.core.type="FILES"/>
+<org.eventb.core.prIdent name="fileVersion" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p22" org.eventb.core.predicate="file∈FILES">
+<org.eventb.core.prIdent name="FILES" org.eventb.core.type="ℙ(FILES)"/>
+<org.eventb.core.prIdent name="file" org.eventb.core.type="FILES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="MODES={REGULAR,SECURE,READONLY}">
+<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="partition(MODES,{REGULAR},{SECURE},{READONLY})">
+<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="user∈dom(registeredUserEMails)∧user∈dom(registeredUserUTypes)">
+<org.eventb.core.prIdent name="UEMAILS" org.eventb.core.type="ℙ(UEMAILS)"/>
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+<org.eventb.core.prIdent name="registeredUserEMails" org.eventb.core.type="ℙ(USERS×UEMAILS)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+<org.eventb.core.prIdent name="user" org.eventb.core.type="USERS"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="UTYPES={BASIC,PREMIUM}">
+<org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="fileSharing∈FILES ↔ USERS">
+<org.eventb.core.prIdent name="FILES" org.eventb.core.type="ℙ(FILES)"/>
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="fileSharing" org.eventb.core.type="ℙ(FILES×USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="∀f⦂FILES·⊤∧f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·⊤∧u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)">
+<org.eventb.core.prIdent name="FILES" org.eventb.core.type="ℙ(FILES)"/>
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+<org.eventb.core.prIdent name="fileBMode" org.eventb.core.type="ℙ(FILES×BOOL)"/>
+<org.eventb.core.prIdent name="fileSharing" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="∀f⦂FILES·f∈FILES∧f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·u∈USERS∧u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)">
+<org.eventb.core.prIdent name="FILES" org.eventb.core.type="ℙ(FILES)"/>
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+<org.eventb.core.prIdent name="fileBMode" org.eventb.core.type="ℙ(FILES×BOOL)"/>
+<org.eventb.core.prIdent name="fileSharing" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="file∈dom(fileSize)">
+<org.eventb.core.prIdent name="FILES" org.eventb.core.type="ℙ(FILES)"/>
+<org.eventb.core.prIdent name="file" org.eventb.core.type="FILES"/>
+<org.eventb.core.prIdent name="fileSize" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬REGULAR=SECURE">
+<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬SECURE=READONLY">
+<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL2"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="shareFile/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0" org.eventb.core.prSets="FILES,USERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0"/>
+<org.eventb.core.prIdent name="localFiles" org.eventb.core.type="ℙ(ℙ(FILES×USERS)×ℤ)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="localFiles∈(FILES ↔ USERS) ⇸ ℕ1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="shareFile/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0" org.eventb.core.prSets="FILES,USERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0"/>
+<org.eventb.core.prIdent name="fileOwner" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="fileSize" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="fileVersion" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="localFiles" org.eventb.core.type="ℙ(FILES×ℙ(USERS×ℤ))"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀f⦂FILES·f∈FILES∧f∈dom(fileSize)∧f∈dom(fileOwner)∧f∈dom(fileVersion)⇒f∈dom(localFiles)"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="downloadFile/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21" org.eventb.core.prSets="FILES,MODES,UEMAILS,USERS,UTYPES">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(UTYPES,{BASIC},{PREMIUM}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p12" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p22,p23"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p22,p23"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(MODES,{REGULAR},{SECURE},{READONLY}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p13" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p24,p25,p26,p27"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p24,p25,p26,p27"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p14" org.eventb.core.prHyps="p19,p8" org.eventb.core.prInfHyps="p28"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p28" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p29"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p30"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p31"/>
+<org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p17" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p32"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p33"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p34"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p32" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p35"/>
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p5,p10,p15,p1,p9,p3,p11,p18,p4,p2,p7,p16,p6,p21,p19,p8,p20,p22,p23,p24,p25,p26,p27,p29,p35">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="archFSize" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="archFVersion" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="file" org.eventb.core.type="FILES"/>
+<org.eventb.core.prIdent name="fileBMode" org.eventb.core.type="ℙ(FILES×BOOL)"/>
+<org.eventb.core.prIdent name="fileBackups" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="fileModes" org.eventb.core.type="ℙ(FILES×MODES)"/>
+<org.eventb.core.prIdent name="fileOwner" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="fileSharing" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="fileSize" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="fileVersion" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="localFiles" org.eventb.core.type="ℙ(ℙ(FILES×USERS)×ℤ)"/>
+<org.eventb.core.prIdent name="registeredUserEMails" org.eventb.core.type="ℙ(USERS×UEMAILS)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+<org.eventb.core.prIdent name="user" org.eventb.core.type="USERS"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="fileOwner∈FILES ⇸ USERS"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="localFiles{{file ↦ user} ↦ fileVersion(file)}∈(FILES ↔ USERS) ⇸ ℕ1"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="fileVersion∈FILES ⇸ ℕ1"/>
+<org.eventb.core.prPred name="p26" org.eventb.core.predicate="¬REGULAR=READONLY"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="registeredUserUTypes∈USERS ⇸ UTYPES"/>
+<org.eventb.core.prPred name="p28" org.eventb.core.predicate="file∈dom(fileSize)∧⊤∧⊤"/>
+<org.eventb.core.prPred name="p31" org.eventb.core.predicate="archFAccess∈FILES ↔ USERS">
+<org.eventb.core.prIdent name="archFAccess" org.eventb.core.type="ℙ(FILES×USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="fileBMode∈FILES ⇸ BOOL"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="registeredUserEMails∈USERS ⤔ UEMAILS"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="partition(UTYPES,{BASIC},{PREMIUM})"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="file∈dom(fileSize)∧file∈dom(fileOwner)∧file∈dom(fileVersion)"/>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="ran(fileVersion)⊆ℕ1"/>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="file∈dom(fileOwner)"/>
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="fileVersion∈FILES ⇸ ℤ"/>
+<org.eventb.core.prPred name="p23" org.eventb.core.predicate="¬BASIC=PREMIUM"/>
+<org.eventb.core.prPred name="p35" org.eventb.core.predicate="∀f⦂FILES·f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)"/>
+<org.eventb.core.prPred name="p33" org.eventb.core.predicate="user∈USERS"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="archFSize∈FILES ⇸ ℕ"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="fileModes∈FILES ⇸ MODES"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="localFiles∈(FILES ↔ USERS) ⇸ ℕ1"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="archFVersion∈FILES ⇸ ℕ1"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="file∈dom(fileVersion)"/>
+<org.eventb.core.prPred name="p34" org.eventb.core.predicate="file∈FILES"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="fileBackups∈FILES ↔ ℕ1"/>
+<org.eventb.core.prPred name="p24" org.eventb.core.predicate="MODES={REGULAR,SECURE,READONLY}"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="partition(MODES,{REGULAR},{SECURE},{READONLY})"/>
+<org.eventb.core.prPred name="p22" org.eventb.core.predicate="UTYPES={BASIC,PREMIUM}"/>
+<org.eventb.core.prPred name="p30" org.eventb.core.predicate="fileSharing∈FILES ↔ USERS"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="fileSize∈FILES ⇸ ℕ"/>
+<org.eventb.core.prPred name="p32" org.eventb.core.predicate="∀f⦂FILES·⊤∧f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·⊤∧u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="∀f⦂FILES,u⦂USERS·f ↦ u∈fileSharing∧f ↦ SECURE∈fileModes⇒u ↦ PREMIUM∈registeredUserUTypes"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="∀f⦂FILES·f∈FILES∧f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·u∈USERS∧u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)"/>
+<org.eventb.core.prPred name="p29" org.eventb.core.predicate="file∈dom(fileSize)"/>
+<org.eventb.core.prPred name="p25" org.eventb.core.predicate="¬REGULAR=SECURE"/>
+<org.eventb.core.prPred name="p27" org.eventb.core.predicate="¬SECURE=READONLY"/>
+<org.eventb.core.prPred name="p21" org.eventb.core.predicate="fileOwner(file)=user∨file ↦ user∈fileSharing"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL2"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="downloadFile/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prSets="FILES,USERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(UTYPES,{BASIC},{PREMIUM}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p5,p6"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p5,p6"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(MODES,{REGULAR},{SECURE},{READONLY}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p8,p9,p10,p11"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p8,p9,p10,p11"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p12"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p12" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p13,p14"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p14">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p15">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p15" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p16">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p16" org.eventb.core.prHyps="p1"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="file" org.eventb.core.type="FILES"/>
+<org.eventb.core.prIdent name="fileOwner" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="fileSize" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="fileVersion" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="fileVersion∈FILES ⇸ ℕ1"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬REGULAR=READONLY">
+<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="file∈dom(fileVersion)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="file∈dom(fileVersion)∧fileVersion∈FILES ⇸ ℤ"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="MODES={REGULAR,SECURE,READONLY}">
+<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="file∈dom(fileSize)∧⊤∧file∈dom(fileVersion)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="partition(UTYPES,{BASIC},{PREMIUM})">
+<org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="partition(MODES,{REGULAR},{SECURE},{READONLY})">
+<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="UTYPES={BASIC,PREMIUM}">
+<org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="file∈dom(fileSize)∧file∈dom(fileOwner)∧file∈dom(fileVersion)"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="⊤∧fileVersion∈FILES ⇸ ℤ"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="file∈dom(fileSize)"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="file∈dom(fileOwner)"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="fileVersion∈FILES ⇸ ℤ"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬BASIC=PREMIUM">
+<org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬REGULAR=SECURE">
+<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="¬SECURE=READONLY">
+<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL2"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="shareFile/act2/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="FILES,USERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(UTYPES,{BASIC},{PREMIUM}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p4,p5"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p4,p5"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(MODES,{REGULAR},{SECURE},{READONLY}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p7,p8,p9,p10"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p7,p8,p9,p10"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p11,p12,p13"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p14" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p15,p16"/>
+<org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p17" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p18,p19"/>
+<org.eventb.core.prHypAction name="REWRITE3" org.eventb.core.prHidden="p20" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p21"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p13">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p22">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p22" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p23">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p23" org.eventb.core.prHyps="p1"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="file" org.eventb.core.type="FILES"/>
+<org.eventb.core.prIdent name="fileOwner" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="fileSize" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="fileVersion" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="user2∈dom(registeredUserUTypes)">
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+<org.eventb.core.prIdent name="user2" org.eventb.core.type="USERS"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="file ↦ user2∉fileSharing">
+<org.eventb.core.prIdent name="fileSharing" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="user2" org.eventb.core.type="USERS"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="user1∈dom(registeredUserEMails)∧user1∈dom(registeredUserUTypes)">
+<org.eventb.core.prIdent name="UEMAILS" org.eventb.core.type="ℙ(UEMAILS)"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+<org.eventb.core.prIdent name="registeredUserEMails" org.eventb.core.type="ℙ(USERS×UEMAILS)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+<org.eventb.core.prIdent name="user1" org.eventb.core.type="USERS"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="fileVersion∈FILES ⇸ ℕ1"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬REGULAR=READONLY">
+<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="file∈dom(fileVersion)"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="user2∈dom(registeredUserEMails)∧user2∈dom(registeredUserUTypes)">
+<org.eventb.core.prIdent name="UEMAILS" org.eventb.core.type="ℙ(UEMAILS)"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+<org.eventb.core.prIdent name="registeredUserEMails" org.eventb.core.type="ℙ(USERS×UEMAILS)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+<org.eventb.core.prIdent name="user2" org.eventb.core.type="USERS"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="file∈dom(fileVersion)∧fileVersion∈FILES ⇸ ℤ"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="MODES={REGULAR,SECURE,READONLY}">
+<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p21" org.eventb.core.predicate="¬file ↦ user2∈fileSharing">
+<org.eventb.core.prIdent name="fileSharing" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="user2" org.eventb.core.type="USERS"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="user1∈dom(registeredUserEMails)">
+<org.eventb.core.prIdent name="UEMAILS" org.eventb.core.type="ℙ(UEMAILS)"/>
+<org.eventb.core.prIdent name="registeredUserEMails" org.eventb.core.type="ℙ(USERS×UEMAILS)"/>
+<org.eventb.core.prIdent name="user1" org.eventb.core.type="USERS"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="user1∈dom(registeredUserUTypes)">
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+<org.eventb.core.prIdent name="user1" org.eventb.core.type="USERS"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="partition(UTYPES,{BASIC},{PREMIUM})">
+<org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="partition(MODES,{REGULAR},{SECURE},{READONLY})">
+<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="UTYPES={BASIC,PREMIUM}">
+<org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="file∈dom(fileSize)∧file∈dom(fileOwner)∧file∈dom(fileVersion)"/>
+<org.eventb.core.prPred name="p22" org.eventb.core.predicate="⊤∧fileVersion∈FILES ⇸ ℤ"/>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="user2∈dom(registeredUserEMails)">
+<org.eventb.core.prIdent name="UEMAILS" org.eventb.core.type="ℙ(UEMAILS)"/>
+<org.eventb.core.prIdent name="registeredUserEMails" org.eventb.core.type="ℙ(USERS×UEMAILS)"/>
+<org.eventb.core.prIdent name="user2" org.eventb.core.type="USERS"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="file∈dom(fileSize)"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="file∈dom(fileOwner)"/>
+<org.eventb.core.prPred name="p23" org.eventb.core.predicate="fileVersion∈FILES ⇸ ℤ"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬BASIC=PREMIUM">
+<org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬REGULAR=SECURE">
+<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬SECURE=READONLY">
+<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL2"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="removeShare/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23,p24" org.eventb.core.prSets="FILES,MODES,UEMAILS,USERS,UTYPES">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(UTYPES,{BASIC},{PREMIUM}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p19" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p25,p26"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p25,p26"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(MODES,{REGULAR},{SECURE},{READONLY}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p20" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p27,p28,p29,p30"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p27,p28,p29,p30"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p5" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p31,p32"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p12" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p33,p34"/>
+<org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p17" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p35"/>
+<org.eventb.core.prHypAction name="REWRITE3" org.eventb.core.prHidden="p11" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p36"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p37"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p38"/>
+<org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p23" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p39"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p40"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p41"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p42"/>
+<org.eventb.core.prHypAction name="REWRITE6" org.eventb.core.prHidden="p36" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p43"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p39" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p44"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p43" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p45"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p8,p15,p21,p1,p14,p6,p16,p24,p7,p2,p10,p22,p9,p18,p4,p13,p3,p25,p26,p27,p28,p29,p30,p31,p32,p33,p34,p35,p44,p45">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="archFSize" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="archFVersion" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="file" org.eventb.core.type="FILES"/>
+<org.eventb.core.prIdent name="fileBMode" org.eventb.core.type="ℙ(FILES×BOOL)"/>
+<org.eventb.core.prIdent name="fileBackups" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="fileModes" org.eventb.core.type="ℙ(FILES×MODES)"/>
+<org.eventb.core.prIdent name="fileOwner" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="fileSharing" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="fileSize" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="fileVersion" org.eventb.core.type="ℙ(FILES×ℤ)"/>
+<org.eventb.core.prIdent name="localFiles" org.eventb.core.type="ℙ(ℙ(FILES×USERS)×ℤ)"/>
+<org.eventb.core.prIdent name="registeredUserEMails" org.eventb.core.type="ℙ(USERS×UEMAILS)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+<org.eventb.core.prIdent name="user1" org.eventb.core.type="USERS"/>
+<org.eventb.core.prIdent name="user2" org.eventb.core.type="USERS"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="fileOwner∈FILES ⇸ USERS"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="localFiles∈ℙ(FILES × USERS) ⇸ ℤ"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="fileVersion∈FILES ⇸ ℕ1"/>
+<org.eventb.core.prPred name="p29" org.eventb.core.predicate="¬REGULAR=READONLY"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="registeredUserUTypes∈USERS ⇸ UTYPES"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="{file ↦ user2}∈dom(localFiles)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="localFiles ∖ {{file ↦ user2} ↦ localFiles({file ↦ user2})}∈(FILES ↔ USERS) ⇸ ℕ1"/>
+<org.eventb.core.prPred name="p38" org.eventb.core.predicate="archFAccess∈FILES ↔ USERS">
+<org.eventb.core.prIdent name="archFAccess" org.eventb.core.type="ℙ(FILES×USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="fileBMode∈FILES ⇸ BOOL"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="registeredUserEMails∈USERS ⤔ UEMAILS"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="file ↦ user2∉fileOwner"/>
+<org.eventb.core.prPred name="p41" org.eventb.core.predicate="user1∈USERS"/>
+<org.eventb.core.prPred name="p32" org.eventb.core.predicate="user1∈dom(registeredUserUTypes)"/>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="partition(UTYPES,{BASIC},{PREMIUM})"/>
+<org.eventb.core.prPred name="p33" org.eventb.core.predicate="user2∈dom(registeredUserEMails)"/>
+<org.eventb.core.prPred name="p24" org.eventb.core.predicate="ran(fileVersion)⊆ℕ1"/>
+<org.eventb.core.prPred name="p26" org.eventb.core.predicate="¬BASIC=PREMIUM"/>
+<org.eventb.core.prPred name="p44" org.eventb.core.predicate="∀f⦂FILES·f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="archFSize∈FILES ⇸ ℕ"/>
+<org.eventb.core.prPred name="p34" org.eventb.core.predicate="user2∈dom(registeredUserUTypes)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="file ↦ user2∈fileSharing"/>
+<org.eventb.core.prPred name="p45" org.eventb.core.predicate="file ↦ TRUE∈fileBMode⇒(∃u⦂USERS·¬user2=u∧u ↦ PREMIUM∈registeredUserUTypes∧file ↦ u∈fileSharing)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="user1∈dom(registeredUserEMails)∧user1∈dom(registeredUserUTypes)"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="fileModes∈FILES ⇸ MODES"/>
+<org.eventb.core.prPred name="p35" org.eventb.core.predicate="¬file ↦ user2∈fileOwner"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="localFiles∈(FILES ↔ USERS) ⇸ ℕ1"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="archFVersion∈FILES ⇸ ℕ1"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="file ↦ TRUE∈fileBMode⇒(∃u⦂USERS·u∈USERS∧user2≠u∧u ↦ PREMIUM∈registeredUserUTypes∧file ↦ u∈fileSharing)"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="user2∈dom(registeredUserEMails)∧user2∈dom(registeredUserUTypes)"/>
+<org.eventb.core.prPred name="p36" org.eventb.core.predicate="file ↦ TRUE∈fileBMode⇒(∃u⦂USERS·u∈USERS∧¬user2=u∧u ↦ PREMIUM∈registeredUserUTypes∧file ↦ u∈fileSharing)"/>
+<org.eventb.core.prPred name="p40" org.eventb.core.predicate="file∈FILES"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="fileBackups∈FILES ↔ ℕ1"/>
+<org.eventb.core.prPred name="p27" org.eventb.core.predicate="MODES={REGULAR,SECURE,READONLY}"/>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="file ↦ user1∈fileSharing"/>
+<org.eventb.core.prPred name="p31" org.eventb.core.predicate="user1∈dom(registeredUserEMails)"/>
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="partition(MODES,{REGULAR},{SECURE},{READONLY})"/>
+<org.eventb.core.prPred name="p25" org.eventb.core.predicate="UTYPES={BASIC,PREMIUM}"/>
+<org.eventb.core.prPred name="p37" org.eventb.core.predicate="fileSharing∈FILES ↔ USERS"/>
+<org.eventb.core.prPred name="p21" org.eventb.core.predicate="fileSize∈FILES ⇸ ℕ"/>
+<org.eventb.core.prPred name="p39" org.eventb.core.predicate="∀f⦂FILES·⊤∧f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·⊤∧u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)"/>
+<org.eventb.core.prPred name="p22" org.eventb.core.predicate="∀f⦂FILES,u⦂USERS·f ↦ u∈fileSharing∧f ↦ SECURE∈fileModes⇒u ↦ PREMIUM∈registeredUserUTypes"/>
+<org.eventb.core.prPred name="p23" org.eventb.core.predicate="∀f⦂FILES·f∈FILES∧f ↦ TRUE∈fileBMode⇒(∃u⦂USERS·u∈USERS∧u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈fileSharing)"/>
+<org.eventb.core.prPred name="p42" org.eventb.core.predicate="user2∈USERS"/>
+<org.eventb.core.prPred name="p43" org.eventb.core.predicate="file ↦ TRUE∈fileBMode⇒(∃u⦂USERS·⊤∧¬user2=u∧u ↦ PREMIUM∈registeredUserUTypes∧file ↦ u∈fileSharing)"/>
+<org.eventb.core.prPred name="p28" org.eventb.core.predicate="¬REGULAR=SECURE"/>
+<org.eventb.core.prPred name="p30" org.eventb.core.predicate="¬SECURE=READONLY"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="removeShare/act3/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="FILES,USERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(UTYPES,{BASIC},{PREMIUM}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p4,p5"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p4,p5"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(MODES,{REGULAR},{SECURE},{READONLY}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p7,p8,p9,p10"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p7,p8,p9,p10"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p11">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p11" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p22">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p12" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p13,p14"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p15" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p16,p17"/>
+<org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p18" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p19"/>
+<org.eventb.core.prHypAction name="REWRITE3" org.eventb.core.prHidden="p20" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p21"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p22" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="file" org.eventb.core.type="FILES"/>
+<org.eventb.core.prIdent name="localFiles" org.eventb.core.type="ℙ(ℙ(FILES×USERS)×ℤ)"/>
+<org.eventb.core.prIdent name="user2" org.eventb.core.type="USERS"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="⊤∧⊤"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="user2∈dom(registeredUserUTypes)">
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="localFiles∈ℙ(FILES × USERS) ⇸ ℤ"/>
+<org.eventb.core.prPred name="p22" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="user1∈dom(registeredUserEMails)∧user1∈dom(registeredUserUTypes)">
+<org.eventb.core.prIdent name="UEMAILS" org.eventb.core.type="ℙ(UEMAILS)"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+<org.eventb.core.prIdent name="registeredUserEMails" org.eventb.core.type="ℙ(USERS×UEMAILS)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+<org.eventb.core.prIdent name="user1" org.eventb.core.type="USERS"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬REGULAR=READONLY">
+<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬file ↦ user2∈fileOwner">
+<org.eventb.core.prIdent name="fileOwner" org.eventb.core.type="ℙ(FILES×USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="file ↦ TRUE∈fileBMode⇒(∃u⦂USERS·u∈USERS∧user2≠u∧u ↦ PREMIUM∈registeredUserUTypes∧file ↦ u∈fileSharing)">
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+<org.eventb.core.prIdent name="fileBMode" org.eventb.core.type="ℙ(FILES×BOOL)"/>
+<org.eventb.core.prIdent name="fileSharing" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="user2∈dom(registeredUserEMails)∧user2∈dom(registeredUserUTypes)">
+<org.eventb.core.prIdent name="UEMAILS" org.eventb.core.type="ℙ(UEMAILS)"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+<org.eventb.core.prIdent name="registeredUserEMails" org.eventb.core.type="ℙ(USERS×UEMAILS)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="{file ↦ user2}∈dom(localFiles)"/>
+<org.eventb.core.prPred name="p21" org.eventb.core.predicate="file ↦ TRUE∈fileBMode⇒(∃u⦂USERS·u∈USERS∧¬user2=u∧u ↦ PREMIUM∈registeredUserUTypes∧file ↦ u∈fileSharing)">
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+<org.eventb.core.prIdent name="fileBMode" org.eventb.core.type="ℙ(FILES×BOOL)"/>
+<org.eventb.core.prIdent name="fileSharing" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="MODES={REGULAR,SECURE,READONLY}">
+<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="user1∈dom(registeredUserEMails)">
+<org.eventb.core.prIdent name="UEMAILS" org.eventb.core.type="ℙ(UEMAILS)"/>
+<org.eventb.core.prIdent name="registeredUserEMails" org.eventb.core.type="ℙ(USERS×UEMAILS)"/>
+<org.eventb.core.prIdent name="user1" org.eventb.core.type="USERS"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="file ↦ user2∉fileOwner">
+<org.eventb.core.prIdent name="fileOwner" org.eventb.core.type="ℙ(FILES×USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="user1∈dom(registeredUserUTypes)">
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+<org.eventb.core.prIdent name="user1" org.eventb.core.type="USERS"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="partition(UTYPES,{BASIC},{PREMIUM})">
+<org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="partition(MODES,{REGULAR},{SECURE},{READONLY})">
+<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="UTYPES={BASIC,PREMIUM}">
+<org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="user2∈dom(registeredUserEMails)">
+<org.eventb.core.prIdent name="UEMAILS" org.eventb.core.type="ℙ(UEMAILS)"/>
+<org.eventb.core.prIdent name="registeredUserEMails" org.eventb.core.type="ℙ(USERS×UEMAILS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬BASIC=PREMIUM">
+<org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬REGULAR=SECURE">
+<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬SECURE=READONLY">
+<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="{file ↦ user2}∈dom(localFiles)∧localFiles∈ℙ(FILES × USERS) ⇸ ℤ"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL2"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="removeShare/grd10/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="FILES,USERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(UTYPES,{BASIC},{PREMIUM}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p4,p5"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p4,p5"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(MODES,{REGULAR},{SECURE},{READONLY}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p7,p8,p9,p10"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p7,p8,p9,p10"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p11">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p11" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p22">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p12" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p13,p14"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p15" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p16,p17"/>
+<org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p18" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p19"/>
+<org.eventb.core.prHypAction name="REWRITE3" org.eventb.core.prHidden="p20" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p21"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p22" org.eventb.core.prHyps="p1"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="file" org.eventb.core.type="FILES"/>
+<org.eventb.core.prIdent name="localFiles" org.eventb.core.type="ℙ(ℙ(FILES×USERS)×ℤ)"/>
+<org.eventb.core.prIdent name="user2" org.eventb.core.type="USERS"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="user2∈dom(registeredUserUTypes)">
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p22" org.eventb.core.predicate="localFiles∈ℙ(FILES × USERS) ⇸ ℤ"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="user1∈dom(registeredUserEMails)∧user1∈dom(registeredUserUTypes)">
+<org.eventb.core.prIdent name="UEMAILS" org.eventb.core.type="ℙ(UEMAILS)"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+<org.eventb.core.prIdent name="registeredUserEMails" org.eventb.core.type="ℙ(USERS×UEMAILS)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+<org.eventb.core.prIdent name="user1" org.eventb.core.type="USERS"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬REGULAR=READONLY">
+<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬file ↦ user2∈fileOwner">
+<org.eventb.core.prIdent name="fileOwner" org.eventb.core.type="ℙ(FILES×USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="localFiles∈(FILES ↔ USERS) ⇸ ℕ1"/>
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="file ↦ TRUE∈fileBMode⇒(∃u⦂USERS·u∈USERS∧user2≠u∧u ↦ PREMIUM∈registeredUserUTypes∧file ↦ u∈fileSharing)">
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+<org.eventb.core.prIdent name="fileBMode" org.eventb.core.type="ℙ(FILES×BOOL)"/>
+<org.eventb.core.prIdent name="fileSharing" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="user2∈dom(registeredUserEMails)∧user2∈dom(registeredUserUTypes)">
+<org.eventb.core.prIdent name="UEMAILS" org.eventb.core.type="ℙ(UEMAILS)"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+<org.eventb.core.prIdent name="registeredUserEMails" org.eventb.core.type="ℙ(USERS×UEMAILS)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="{file ↦ user2}∈dom(localFiles)"/>
+<org.eventb.core.prPred name="p21" org.eventb.core.predicate="file ↦ TRUE∈fileBMode⇒(∃u⦂USERS·u∈USERS∧¬user2=u∧u ↦ PREMIUM∈registeredUserUTypes∧file ↦ u∈fileSharing)">
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+<org.eventb.core.prIdent name="fileBMode" org.eventb.core.type="ℙ(FILES×BOOL)"/>
+<org.eventb.core.prIdent name="fileSharing" org.eventb.core.type="ℙ(FILES×USERS)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="MODES={REGULAR,SECURE,READONLY}">
+<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="user1∈dom(registeredUserEMails)">
+<org.eventb.core.prIdent name="UEMAILS" org.eventb.core.type="ℙ(UEMAILS)"/>
+<org.eventb.core.prIdent name="registeredUserEMails" org.eventb.core.type="ℙ(USERS×UEMAILS)"/>
+<org.eventb.core.prIdent name="user1" org.eventb.core.type="USERS"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="file ↦ user2∉fileOwner">
+<org.eventb.core.prIdent name="fileOwner" org.eventb.core.type="ℙ(FILES×USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="user1∈dom(registeredUserUTypes)">
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+<org.eventb.core.prIdent name="registeredUserUTypes" org.eventb.core.type="ℙ(USERS×UTYPES)"/>
+<org.eventb.core.prIdent name="user1" org.eventb.core.type="USERS"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="partition(UTYPES,{BASIC},{PREMIUM})">
+<org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="partition(MODES,{REGULAR},{SECURE},{READONLY})">
+<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="UTYPES={BASIC,PREMIUM}">
+<org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="⊤∧localFiles∈ℙ(FILES × USERS) ⇸ ℤ"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="user2∈dom(registeredUserEMails)">
+<org.eventb.core.prIdent name="UEMAILS" org.eventb.core.type="ℙ(UEMAILS)"/>
+<org.eventb.core.prIdent name="registeredUserEMails" org.eventb.core.type="ℙ(USERS×UEMAILS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬BASIC=PREMIUM">
+<org.eventb.core.prIdent name="BASIC" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="PREMIUM" org.eventb.core.type="UTYPES"/>
+<org.eventb.core.prIdent name="UTYPES" org.eventb.core.type="ℙ(UTYPES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬REGULAR=SECURE">
+<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.prIdent name="REGULAR" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬SECURE=READONLY">
+<org.eventb.core.prIdent name="MODES" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.prIdent name="READONLY" org.eventb.core.type="MODES"/>
+<org.eventb.core.prIdent name="SECURE" org.eventb.core.type="MODES"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="{file ↦ user2}∈dom(localFiles)∧localFiles∈ℙ(FILES × USERS) ⇸ ℤ"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL2"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 </org.eventb.core.prProof>
 </org.eventb.core.prFile>
