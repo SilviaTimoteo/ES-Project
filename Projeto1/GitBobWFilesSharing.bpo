@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="154">
+<org.eventb.core.poFile org.eventb.core.poStamp="162">
 <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="UEMAILS" org.eventb.core.type="ℙ(UEMAILS)"/>
 <org.eventb.core.poIdentifier name="USERS" org.eventb.core.type="ℙ(USERS)"/>
@@ -261,7 +261,7 @@
 <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="owner∈dom(registeredUserEMails)∧owner∈dom(registeredUserUTypes)" org.eventb.core.source="/Projeto1/GitBobWFilesSharing.bum|org.eventb.core.machineFile#GitBobWFilesSharing|org.eventb.core.event#I|org.eventb.core.guard#grd1"/>
 <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="file∉dom(fileSize)∧file∉dom(fileOwner)∧file∉dom(fileVersion)" org.eventb.core.source="/Projeto1/GitBobWFilesSharing.bum|org.eventb.core.machineFile#GitBobWFilesSharing|org.eventb.core.event#I|org.eventb.core.guard#grd2"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="removeFile/inv4/INV" org.eventb.core.accurate="false" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="154">
+<org.eventb.core.poSequent name="removeFile/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="155">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poPredicateSet#EVTALLHYPregisteredUserUTypez"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="archFSize{file ↦ fileSize(file)}∈FILES ⇸ ℕ" org.eventb.core.source="/Projeto1/GitBobWFilesSharing.bum|org.eventb.core.machineFile#GitBobWFilesSharing|org.eventb.core.invariant#Y"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Projeto1/GitBobWFiles.bum|org.eventb.core.machineFile#GitBobWFiles|org.eventb.core.event#;"/>
@@ -270,7 +270,7 @@
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poSequent#removeFile\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="removeFile/inv6/INV" org.eventb.core.accurate="false" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="154">
+<org.eventb.core.poSequent name="removeFile/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="155">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poPredicateSet#EVTALLHYPregisteredUserUTypez"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="archFVersion{file ↦ fileVersion(file)}∈FILES ⇸ ℕ1" org.eventb.core.source="/Projeto1/GitBobWFilesSharing.bum|org.eventb.core.machineFile#GitBobWFilesSharing|org.eventb.core.invariant#["/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Projeto1/GitBobWFiles.bum|org.eventb.core.machineFile#GitBobWFiles|org.eventb.core.event#;"/>
@@ -279,7 +279,7 @@
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poSequent#removeFile\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="removeFile/inv3/INV" org.eventb.core.accurate="false" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="154">
+<org.eventb.core.poSequent name="removeFile/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="155">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poPredicateSet#EVTALLHYPregisteredUserUTypez"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀f⦂FILES,u⦂USERS·f ↦ u∈{file} ⩤ fileSharing∧f ↦ SECURE∈fileModes⇒u ↦ PREMIUM∈registeredUserUTypes" org.eventb.core.source="/Projeto1/GitBobWFilesSharing.bum|org.eventb.core.machineFile#GitBobWFilesSharing|org.eventb.core.invariant#R"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Projeto1/GitBobWFiles.bum|org.eventb.core.machineFile#GitBobWFiles|org.eventb.core.event#;"/>
@@ -288,7 +288,7 @@
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poSequent#removeFile\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="removeFile/inv7/INV" org.eventb.core.accurate="false" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="154">
+<org.eventb.core.poSequent name="removeFile/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="155">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poPredicateSet#EVTALLHYPregisteredUserUTypez"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀f⦂FILES·f∈FILES∧f ↦ TRUE∈{file} ⩤ fileBMode⇒(∃u⦂USERS·u∈USERS∧u ↦ PREMIUM∈registeredUserUTypes∧f ↦ u∈{file} ⩤ fileSharing)" org.eventb.core.source="/Projeto1/GitBobWFilesSharing.bum|org.eventb.core.machineFile#GitBobWFilesSharing|org.eventb.core.invariant#inv1"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Projeto1/GitBobWFiles.bum|org.eventb.core.machineFile#GitBobWFiles|org.eventb.core.event#;"/>
@@ -297,13 +297,13 @@
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poSequent#removeFile\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="removeFile/act5/WD" org.eventb.core.accurate="false" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="154">
+<org.eventb.core.poSequent name="removeFile/act5/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="155">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poPredicateSet#EVTALLHYPregisteredUserUTypez"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="file∈dom(fileSize)∧fileSize∈FILES ⇸ ℤ" org.eventb.core.source="/Projeto1/GitBobWFilesSharing.bum|org.eventb.core.machineFile#GitBobWFilesSharing|org.eventb.core.event#J|org.eventb.core.action#act:"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Projeto1/GitBobWFilesSharing.bum|org.eventb.core.machineFile#GitBobWFilesSharing|org.eventb.core.event#J|org.eventb.core.action#act:"/>
 <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poPredicateSet#EVTALLHYPregisteredUserUTypez"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="removeFile/act7/WD" org.eventb.core.accurate="false" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="154">
+<org.eventb.core.poSequent name="removeFile/act7/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="155">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poPredicateSet#EVTALLHYPregisteredUserUTypez"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="file∈dom(fileVersion)∧fileVersion∈FILES ⇸ ℤ" org.eventb.core.source="/Projeto1/GitBobWFilesSharing.bum|org.eventb.core.machineFile#GitBobWFilesSharing|org.eventb.core.event#J|org.eventb.core.action#act="/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Projeto1/GitBobWFilesSharing.bum|org.eventb.core.machineFile#GitBobWFilesSharing|org.eventb.core.event#J|org.eventb.core.action#act="/>
@@ -380,7 +380,7 @@
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poSequent#shareFile\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="shareFile/act1/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="153">
+<org.eventb.core.poSequent name="shareFile/act1/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="159">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poPredicateSet#EVTALLHYPregisteredUserUType}"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="localFiles∪{user2 ↦ file}=localFiles∪{user2 ↦ file}" org.eventb.core.source="/Projeto1/GitBobWFiles.bum|org.eventb.core.machineFile#GitBobWFiles|org.eventb.core.event#&gt;|org.eventb.core.action#-"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Projeto1/GitBobWFiles.bum|org.eventb.core.machineFile#GitBobWFiles|org.eventb.core.event#&gt;"/>
@@ -474,16 +474,16 @@
 <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="file ↦ user∈fileOwner" org.eventb.core.source="/Projeto1/GitBobWFilesSharing.bum|org.eventb.core.machineFile#GitBobWFilesSharing|org.eventb.core.event#T|org.eventb.core.guard#."/>
 <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="mode≠SECURE∨(∀u⦂USERS·u∈USERS∧file ↦ u∈fileSharing⇒u ↦ PREMIUM∈registeredUserUTypes)" org.eventb.core.source="/Projeto1/GitBobWFilesSharing.bum|org.eventb.core.machineFile#GitBobWFilesSharing|org.eventb.core.event#T|org.eventb.core.guard#\/"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTregisteredUserUTypf(" org.eventb.core.parentSet="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="153">
+<org.eventb.core.poPredicateSet name="EVTIDENTregisteredUserUTypf(" org.eventb.core.parentSet="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="160">
 <org.eventb.core.poIdentifier name="file" org.eventb.core.type="FILES"/>
-<org.eventb.core.poIdentifier name="localFiles'" org.eventb.core.type="ℙ(USERS×FILES)"/>
 <org.eventb.core.poIdentifier name="user" org.eventb.core.type="USERS"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPregisteredUserUTypf(" org.eventb.core.parentSet="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poPredicateSet#EVTIDENTregisteredUserUTypf(" org.eventb.core.poStamp="153">
+<org.eventb.core.poPredicateSet name="EVTALLHYPregisteredUserUTypf(" org.eventb.core.parentSet="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poPredicateSet#EVTIDENTregisteredUserUTypf(" org.eventb.core.poStamp="162">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="file∈FILES" org.eventb.core.source="/Projeto1/GitBobWFilesSharing.bum|org.eventb.core.machineFile#GitBobWFilesSharing|org.eventb.core.event#U|org.eventb.core.guard#)"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="user∈USERS" org.eventb.core.source="/Projeto1/GitBobWFilesSharing.bum|org.eventb.core.machineFile#GitBobWFilesSharing|org.eventb.core.event#U|org.eventb.core.guard#*"/>
-<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="file∈dom(archFSize)∧file∈dom(archFAccess)∧file∈dom(archFVersion)" org.eventb.core.source="/Projeto1/GitBobWFilesSharing.bum|org.eventb.core.machineFile#GitBobWFilesSharing|org.eventb.core.event#U|org.eventb.core.guard#+"/>
-<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="file ↦ user∈archFAccess" org.eventb.core.source="/Projeto1/GitBobWFilesSharing.bum|org.eventb.core.machineFile#GitBobWFilesSharing|org.eventb.core.event#U|org.eventb.core.guard#-"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="user∈USERS" org.eventb.core.source="/Projeto1/GitBobWFilesSharing.bum|org.eventb.core.machineFile#GitBobWFilesSharing|org.eventb.core.event#U|org.eventb.core.guard#internal1"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="user∈dom(registeredUserEMails)∧user∈dom(registeredUserUTypes)" org.eventb.core.source="/Projeto1/GitBobWFilesSharing.bum|org.eventb.core.machineFile#GitBobWFilesSharing|org.eventb.core.event#U|org.eventb.core.guard#,"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="file∈dom(archFSize)∧file∈dom(archFAccess)∧file∈dom(archFVersion)" org.eventb.core.source="/Projeto1/GitBobWFilesSharing.bum|org.eventb.core.machineFile#GitBobWFilesSharing|org.eventb.core.event#U|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="file ↦ user∈archFAccess" org.eventb.core.source="/Projeto1/GitBobWFilesSharing.bum|org.eventb.core.machineFile#GitBobWFilesSharing|org.eventb.core.event#U|org.eventb.core.guard#-"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poSequent name="turnOffBU/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="153">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Projeto1/GitBobWFilesSharing.bpo|org.eventb.core.poFile#GitBobWFilesSharing|org.eventb.core.poPredicateSet#EVTALLHYPregisteredUserUTypf)"/>

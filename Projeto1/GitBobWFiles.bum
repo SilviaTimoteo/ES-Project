@@ -93,11 +93,11 @@
 <org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="?" org.eventb.core.comment="repositorio local de cada User" org.eventb.core.identifier="localFiles"/>
 <org.eventb.core.invariant name="@" org.eventb.core.label="inv4" org.eventb.core.predicate="localFiles ∈ USERS ↔ FILES"/>
 <org.eventb.core.event name="A" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="downloadFromArchive">
-<org.eventb.core.action name="'" org.eventb.core.assignment="localFiles ≔ localFiles ∪ {user ↦ file}" org.eventb.core.label="act1"/>
 <org.eventb.core.parameter name="(" org.eventb.core.identifier="file"/>
 <org.eventb.core.parameter name=")" org.eventb.core.identifier="user"/>
 <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="file ∈ FILES" org.eventb.core.theorem="true"/>
 <org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∈ USERS"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="user ∈ dom(registeredUserEMails) ∧ user ∈ dom(registeredUserUTypes)"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="B" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="removeShare">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="file"/>

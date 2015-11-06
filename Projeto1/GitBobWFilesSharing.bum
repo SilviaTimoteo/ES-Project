@@ -166,13 +166,13 @@
 <org.eventb.core.action name="1" org.eventb.core.assignment="fileModes(file) ≔ mode" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="U" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="downloadFromArchive">
-<org.eventb.core.parameter name="'" org.eventb.core.identifier="file"/>
-<org.eventb.core.parameter name="(" org.eventb.core.identifier="user"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="file"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="user"/>
 <org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="file ∈ FILES"/>
-<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∈ USERS"/>
-<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="file∈ dom(archFSize) ∧ file∈ dom(archFAccess) ∧ file∈ dom(archFVersion)"/>
-<org.eventb.core.action name="," org.eventb.core.assignment="localFiles ≔ localFiles ∪ {user ↦ file}" org.eventb.core.label="act1"/>
-<org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="file ↦ user ∈ archFAccess"/>
+<org.eventb.core.guard name="internal1" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∈ USERS"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="user ∈ dom(registeredUserEMails) ∧ user ∈ dom(registeredUserUTypes)"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd4" org.eventb.core.predicate="file∈ dom(archFSize) ∧ file∈ dom(archFAccess) ∧ file∈ dom(archFVersion)"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd5" org.eventb.core.predicate="file ↦ user ∈ archFAccess"/>
 <org.eventb.core.refinesEvent name="." org.eventb.core.target="downloadFromArchive"/>
 </org.eventb.core.event>
 <org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="unknown -&gt; unknown" de.prob.units.unitPragmaAttribute="" name="V" org.eventb.core.identifier="archFSize"/>
