@@ -33,7 +33,8 @@
 <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="user ∈ USERS"/>
 <org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∈ dom(registeredUserEMails) ∧ user ∈ dom(registeredUserUTypes)"/>
 <org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="fileOwner∼[{user}] = ∅"/>
-<org.eventb.core.guard name="/" org.eventb.core.label="grd4" org.eventb.core.predicate="user ∉ ran(fileSharing)"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="fileSharing ≔ fileSharing ⩥ {user}" org.eventb.core.label="act3"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd4" org.eventb.core.predicate="∀f ·((f ∈ FILES ∧ f ↦ user ∈ fileSharing ∧ f ↦ TRUE ∈ fileBMode) ⇒ (∃u ·(u ∈ USERS ∧ u≠user ∧ u ↦ PREMIUM ∈ registeredUserUTypes ∧ f ↦ u ∈ fileSharing ))) "/>
 </org.eventb.core.event>
 <org.eventb.core.event name="G" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="upgradePremium">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="upgradePremium"/>
@@ -83,6 +84,7 @@
 <org.eventb.core.action name="act;" org.eventb.core.assignment="archFAccess ≔ archFAccess ∪ ({file} ◁ fileSharing)" org.eventb.core.label="act9"/>
 <org.eventb.core.action name="act=" org.eventb.core.assignment="archFVersion(file) ≔ fileVersion(file)" org.eventb.core.label="act7"/>
 <org.eventb.core.action name="actB" org.eventb.core.assignment="fileSharing ≔ {file} ⩤ fileSharing" org.eventb.core.label="act12"/>
+<org.eventb.core.action name="internal2" org.eventb.core.assignment="fileModes ≔ {file} ⩤ fileModes" org.eventb.core.label="act13"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="K" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="uploadFile">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="uploadFile"/>
@@ -93,7 +95,7 @@
 <org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="file ∈ dom(fileSize) ∧ file ∈ dom(fileOwner) ∧ file ∈ dom(fileVersion)"/>
 <org.eventb.core.action name="-" org.eventb.core.assignment="fileVersion(file) ≔ fileVersion(file) + 1" org.eventb.core.label="act1"/>
 <org.eventb.core.guard name="/" org.eventb.core.label="grd6" org.eventb.core.predicate="file ∈ dom(fileVersion)"/>
-<org.eventb.core.action name="4" org.eventb.core.assignment="fileBackups ≔ fileBackups ∪ (( dom(fileBMode ▷ {TRUE}) ∩ {file} ) × {fileVersion(file) +1 })" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="internal1" org.eventb.core.assignment="fileBackups ≔ fileBackups ∪ (( dom(fileBMode ▷ {TRUE}) ∩ {file} ) × {fileVersion(file) + 1})" org.eventb.core.label="act3"/>
 <org.eventb.core.guard name="5" org.eventb.core.label="grd7" org.eventb.core.predicate="fileVersion(file) +1 ∈ ℕ1 "/>
 <org.eventb.core.guard name="0" org.eventb.core.label="grd8" org.eventb.core.predicate="file ↦ READONLY ∈ fileModes ⇒ file ↦ user ∈ fileOwner"/>
 </org.eventb.core.event>
