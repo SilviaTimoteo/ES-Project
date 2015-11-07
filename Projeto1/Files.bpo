@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="1">
+<org.eventb.core.poFile org.eventb.core.poStamp="3">
 <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="1">
 <org.eventb.core.poIdentifier name="FILES" org.eventb.core.type="ℙ(FILES)"/>
 <org.eventb.core.poIdentifier name="MODES" org.eventb.core.type="ℙ(MODES)"/>
@@ -7,7 +7,7 @@
 <org.eventb.core.poIdentifier name="REGULAR" org.eventb.core.type="MODES"/>
 <org.eventb.core.poIdentifier name="SECURE" org.eventb.core.type="MODES"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Projeto1/Files.bpo|org.eventb.core.poFile#Files|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="1">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(MODES,{REGULAR},{SECURE},{READONLY})" org.eventb.core.source="/Projeto1/Files.buc|org.eventb.core.contextFile#Files|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/GitBob-G05-P1-1516/Files.bpo|org.eventb.core.poFile#Files|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(MODES,{REGULAR},{SECURE},{READONLY})" org.eventb.core.source="/GitBob-G05-P1-1516/Files.buc|org.eventb.core.contextFile#Files|org.eventb.core.axiom#,"/>
 </org.eventb.core.poPredicateSet>
 </org.eventb.core.poFile>

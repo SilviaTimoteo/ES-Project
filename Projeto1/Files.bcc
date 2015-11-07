@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase;de.prob.units.mchBase">
-<org.eventb.core.scAxiom name="'" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(MODES,{REGULAR},{SECURE},{READONLY})" org.eventb.core.source="/Projeto1/Files.buc|org.eventb.core.contextFile#Files|org.eventb.core.axiom#," org.eventb.core.theorem="false"/>
-<org.eventb.core.scCarrierSet name="FILES" org.eventb.core.source="/Projeto1/Files.buc|org.eventb.core.contextFile#Files|org.eventb.core.carrierSet#'" org.eventb.core.type="ℙ(FILES)"/>
-<org.eventb.core.scCarrierSet name="MODES" org.eventb.core.source="/Projeto1/Files.buc|org.eventb.core.contextFile#Files|org.eventb.core.carrierSet#(" org.eventb.core.type="ℙ(MODES)"/>
-<org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" de.prob.units.unitPragmaAttribute="" name="READONLY" org.eventb.core.source="/Projeto1/Files.buc|org.eventb.core.contextFile#Files|org.eventb.core.constant#+" org.eventb.core.type="MODES"/>
-<org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" de.prob.units.unitPragmaAttribute="" name="REGULAR" org.eventb.core.source="/Projeto1/Files.buc|org.eventb.core.contextFile#Files|org.eventb.core.constant#)" org.eventb.core.type="MODES"/>
-<org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" de.prob.units.unitPragmaAttribute="" name="SECURE" org.eventb.core.source="/Projeto1/Files.buc|org.eventb.core.contextFile#Files|org.eventb.core.constant#*" org.eventb.core.type="MODES"/>
+<org.eventb.core.scAxiom name="'" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(MODES,{REGULAR},{SECURE},{READONLY})" org.eventb.core.source="/GitBob-G05-P1-1516/Files.buc|org.eventb.core.contextFile#Files|org.eventb.core.axiom#," org.eventb.core.theorem="false"/>
+<org.eventb.core.scCarrierSet name="FILES" org.eventb.core.source="/GitBob-G05-P1-1516/Files.buc|org.eventb.core.contextFile#Files|org.eventb.core.carrierSet#'" org.eventb.core.type="ℙ(FILES)"/>
+<org.eventb.core.scCarrierSet name="MODES" org.eventb.core.source="/GitBob-G05-P1-1516/Files.buc|org.eventb.core.contextFile#Files|org.eventb.core.carrierSet#(" org.eventb.core.type="ℙ(MODES)"/>
+<org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" de.prob.units.unitPragmaAttribute="" name="READONLY" org.eventb.core.source="/GitBob-G05-P1-1516/Files.buc|org.eventb.core.contextFile#Files|org.eventb.core.constant#+" org.eventb.core.type="MODES"/>
+<org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" de.prob.units.unitPragmaAttribute="" name="REGULAR" org.eventb.core.source="/GitBob-G05-P1-1516/Files.buc|org.eventb.core.contextFile#Files|org.eventb.core.constant#)" org.eventb.core.type="MODES"/>
+<org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" de.prob.units.unitPragmaAttribute="" name="SECURE" org.eventb.core.source="/GitBob-G05-P1-1516/Files.buc|org.eventb.core.contextFile#Files|org.eventb.core.constant#*" org.eventb.core.type="MODES"/>
 </org.eventb.core.scContextFile>
