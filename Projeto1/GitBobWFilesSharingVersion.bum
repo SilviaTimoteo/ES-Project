@@ -61,6 +61,7 @@
 <org.eventb.core.action name="grd6" org.eventb.core.assignment="fileSharing ≔ fileSharing ∪ {file ↦ owner}" org.eventb.core.label="act6"/>
 <org.eventb.core.action name="internal2" org.eventb.core.assignment="domainLF ≔ domainLF ∪ {file ↦ owner}" org.eventb.core.label="act8"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="localFiles ≔ localFiles ∪ {file ↦ owner ↦ 1}" org.eventb.core.label="act7"/>
+<org.eventb.core.guard name="internal5" org.eventb.core.label="grd8" org.eventb.core.predicate="file ↦ owner ∉ domainLF"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="var9" org.eventb.core.comment="needs to be refined when there's sharing " org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="removeFile">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="removeFile"/>
@@ -107,6 +108,7 @@
 <org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="file ∈ dom(fileSize) ∧ file ∈ dom(fileOwner) ∧ file ∈ dom(fileVersion)"/>
 <org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="fileOwner(file) = user ∨ file ↦ user ∈ fileSharing"/>
 <org.eventb.core.action name="-" org.eventb.core.assignment="localFiles(file ↦ user) ≔ fileVersion(file)" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd5" org.eventb.core.predicate="file ↦ user ∈ domainLF"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="var=" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="shareFile">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="shareFile"/>
@@ -123,8 +125,9 @@
 <org.eventb.core.guard name="1" org.eventb.core.comment="verificar se o user2 ainda nao tem acesso ao ficheiro" org.eventb.core.label="grd7" org.eventb.core.predicate="file ↦ user2 ∉ fileSharing"/>
 <org.eventb.core.action name="2" org.eventb.core.assignment="fileSharing ≔ fileSharing ∪ {file ↦ user2}" org.eventb.core.label="act1"/>
 <org.eventb.core.guard name="5" org.eventb.core.label="grd8" org.eventb.core.predicate="file↦SECURE ∈ fileModes ⇒ user2 ↦ PREMIUM ∈ registeredUserUTypes"/>
-<org.eventb.core.action name="9" org.eventb.core.assignment="localFiles ≔ localFiles ∪ {file ↦ user2 ↦ fileVersion(file)}" org.eventb.core.label="act2"/>
 <org.eventb.core.action name=":" org.eventb.core.assignment="domainLF ≔ domainLF ∪ {file ↦ user2}" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="9" org.eventb.core.assignment="localFiles ≔ localFiles ∪ {file ↦ user2 ↦ fileVersion(file)}" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name=";" org.eventb.core.label="grd10" org.eventb.core.predicate="file ↦ user2 ∉ domainLF"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="var&gt;" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="removeShare">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="removeShare"/>
@@ -145,6 +148,8 @@
 <org.eventb.core.guard name="8" org.eventb.core.label="grd11" org.eventb.core.predicate="file ↦ user2 ∈ dom(localFiles)"/>
 <org.eventb.core.guard name="7" org.eventb.core.label="grd10" org.eventb.core.predicate="localFiles(file ↦ user2) ∈ ℕ1 "/>
 <org.eventb.core.action name="9" org.eventb.core.assignment="domainLF ≔ domainLF ∖ {file ↦ user2}" org.eventb.core.label="act4"/>
+<org.eventb.core.guard name=":" org.eventb.core.label="grd12" org.eventb.core.predicate="file ↦ user2 ∈ domainLF"/>
+<org.eventb.core.guard name=";" org.eventb.core.label="grd13" org.eventb.core.predicate="file ↦ user2 ↦ localFiles(file ↦ user2) ∈ localFiles"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="var?" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="changeSharingMode">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="changeSharingMode"/>
