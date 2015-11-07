@@ -100,7 +100,6 @@
 <org.eventb.core.parameter name="(" org.eventb.core.identifier="user"/>
 <org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="file ∈ FILES"/>
 <org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∈ USERS"/>
-<org.eventb.core.guard name="-" org.eventb.core.label="grd5" org.eventb.core.predicate="user ∈ dom(registeredUserEMails) ∧ user ∈ dom(registeredUserUTypes)"/>
 <org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="file ∈ dom(fileSize) ∧ file ∈ dom(fileOwner) ∧ file ∈ dom(fileVersion) "/>
 <org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="file ↦ FALSE ∈ fileBMode"/>
 <org.eventb.core.action name="." org.eventb.core.assignment="fileBackups ≔ fileBackups ∪ {file ↦ fileVersion(file)} " org.eventb.core.label="act1"/>
@@ -116,9 +115,9 @@
 <org.eventb.core.parameter name=")" org.eventb.core.identifier="user"/>
 <org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∈ USERS"/>
 <org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="file ↦ TRUE ∈ fileBMode"/>
-<org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="user ∈ dom(registeredUserEMails) ∧ user ∈ dom(registeredUserUTypes)"/>
 <org.eventb.core.guard name="-" org.eventb.core.label="grd5" org.eventb.core.predicate="file ∈ dom(fileSize) ∧ file ∈ dom(fileOwner) ∧ file ∈ dom(fileVersion) "/>
 <org.eventb.core.action name="." org.eventb.core.assignment="fileBackups ≔ {file} ⩤ fileBackups" org.eventb.core.label="act1"/>
 <org.eventb.core.action name="/" org.eventb.core.assignment="fileBMode(file) ≔ FALSE" org.eventb.core.label="act2"/>
 </org.eventb.core.event>
+<org.eventb.core.invariant name="var5" org.eventb.core.label="inv8" org.eventb.core.predicate="∀u· ((u∈USERS ∧ u ∈ ran(fileOwner)) ⇒ (u ∈ dom(registeredUserEMails) ∧ u ∈ dom(registeredUserUTypes)))"/>
 </org.eventb.core.machineFile>

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.psFile>
-<org.eventb.core.psStatus name="INITIALISATION/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="164" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="removeUser/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="166" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="addFile/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="164" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="removeFile/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="164" org.eventb.core.psManual="true"/>
-<org.eventb.core.psStatus name="uploadFile/grd10/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="164" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="uploadFile/inv1/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="164" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="uploadFile/act4/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="164" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="downloadFile/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="164" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="downloadFile/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="164" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="shareFile/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="164" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="shareFile/act2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="164" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="removeShare/grd10/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="164" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="removeShare/grd13/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="164" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="removeShare/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="164" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="removeShare/act3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="164" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="170" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="removeUser/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="190" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="addFile/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="170" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="removeFile/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="179" org.eventb.core.psBroken="true" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="uploadFile/grd10/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="183" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="uploadFile/inv1/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="183" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="uploadFile/act4/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="183" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="downloadFile/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="170" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="downloadFile/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="170" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="shareFile/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="184" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="shareFile/act2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="184" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="removeShare/grd10/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="177" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="removeShare/grd13/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="177" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="removeShare/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="177" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="removeShare/act3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="177" org.eventb.core.psManual="false"/>
 </org.eventb.core.psFile>
